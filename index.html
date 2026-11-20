@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ananny Royzada | Backend & Distributed Systems Engineer</title>
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/my-avatar.png" alt="Ananny Royzada" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Ananny Royzada">Ananny Royzada</h1>
+          <p class="title">Backend &amp; Distributed Systems</p>
+        </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+              <a href="mailto:anannyroyzada8@gmail.com" class="contact-link">anannyroyzada8@gmail.com</a>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="hardware-chip-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Focus</p>
+              <span class="contact-link" style="color: var(--white-2); font-size: 13px;">High Concurrency &amp; Java 21</span>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="cloud-done-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Cloud Infrastructure</p>
+              <span class="contact-link" style="color: #38bdf8; font-size: 13px;">Cloudflare Pages + Render</span>
+            </div>
+          </li>
+
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+              <address>India</address>
+            </div>
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub Profile">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn Profile">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="mailto:anannyroyzada8@gmail.com" class="social-link" title="Direct Email">
+              <ion-icon name="send-outline"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+    <!--
+      - #MAIN CONTENT
+    -->
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Projects</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+      <!--
+        - #ABOUT
+      -->
+      <article class="about active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About Me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+            I am a <strong>Backend &amp; Distributed Systems Engineer</strong> specialized in building resilient, low-latency microservices with <strong>Java 21, Spring Boot 3, PostgreSQL, and Redis</strong>.
+          </p>
+
+          <p>
+            My engineering philosophy centers on rigorous distributed systems primitives: eliminating race conditions with atomic Redis Lua scripts, implementing non-blocking asynchronous processing with <strong>Java 21 Virtual Threads (Project Loom)</strong>, ensuring high availability with <strong>Resilience4j Circuit Breakers</strong>, and proving system guarantees through <strong>Testcontainers chaos tests</strong> and <strong>JMH microbenchmarks</strong>.
+          </p>
+        </section>
+
+
+        <!--
+          - What I'm Doing
+        -->
+        <section class="service">
+
+          <h3 class="h3 service-title">Core Engineering Domains</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="Distributed Rate Limiting" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Distributed Rate Limiting &amp; API Gateways</h4>
+                <p class="service-item-text">
+                  Spring Cloud Gateway combined with Redis Lettuce client. Implementing Token Bucket and Sliding Window algorithms with atomic Lua execution, circuit breakers, and sub-millisecond p99 latencies.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-app.svg" alt="Job Queue" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">High-Concurrency Job Queues &amp; Workflows</h4>
+                <p class="service-item-text">
+                  PostgreSQL-backed job engines utilizing <code>SELECT ... FOR UPDATE SKIP LOCKED</code> and Redis Streams. Virtual thread worker pools, visibility timeouts, exponential backoff retries, and dead-letter queues.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-design.svg" alt="Performance Benchmarks" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Performance Engineering &amp; Microbenchmarks</h4>
+                <p class="service-item-text">
+                  Benchmarking critical hot paths using OpenJDK JMH. Comparing Java 21 Virtual Threads against Platform Thread Pools under high blocking I/O loads, verified with Gatling and k6 load tests.
+                </p>
+              </div>
+            </li>
+
+            <li class="service-item">
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-photo.svg" alt="Full Stack Cloud" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Full-Stack Cloud &amp; Containerization</h4>
+                <p class="service-item-text">
+                  Multi-tier hosting architecture pairing React (Vite) on Cloudflare Pages with Spring Boot Docker containers on Render, orchestrated by GitHub Actions CI/CD pipelines and Docker Compose.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+
+        </section>
+
+
+        <!--
+          - Cloud Infrastructure Topology Banner
+        -->
+        <section class="cloud-infra-banner">
+          <div class="cloud-infra-header">
+            <span class="cloud-infra-title">
+              <ion-icon name="server-outline"></ion-icon> Unified Cloud &amp; Hosting Topology
+            </span>
+            <span class="project-tag tag-blue">Cloudflare Pages + Render</span>
+          </div>
+          <p style="color: var(--light-gray); font-size: 14px; line-height: 1.6;">
+            This portfolio site and my React frontends are globally distributed on <strong>Cloudflare Pages</strong> (Edge CDN, SSL, continuous Git deployment). The backend APIs (Spring Boot, PostgreSQL, and Redis) run containerized on <strong>Render</strong>, providing a production-grade infrastructure reusable across all projects.
+          </p>
+          <div class="cloud-badges-list">
+            <span class="cloud-badge-item"><ion-icon name="globe-outline"></ion-icon> Cloudflare Edge CDN</span>
+            <span class="cloud-badge-item"><ion-icon name="logo-docker"></ion-icon> Render Containerized APIs</span>
+            <span class="cloud-badge-item"><ion-icon name="git-branch-outline"></ion-icon> GitHub Actions CI/CD</span>
+            <span class="cloud-badge-item"><ion-icon name="shield-checkmark-outline"></ion-icon> Automated SSL &amp; CORS</span>
+          </div>
+        </section>
+
+      </article>
+
+
+
+      <!--
+        - #PORTFOLIO / PROJECTS
+      -->
+      <article class="portfolio" data-page="projects">
+
+        <header>
+          <h2 class="h2 article-title">Featured Projects</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Distributed Systems</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Concurrency &amp; Engines</button>
+            </li>
+            <li class="filter-item">
+              <button data-filter-btn>Cloud &amp; Benchmarks</button>
+            </li>
+          </ul>
+
+          <div class="filter-select-box">
+            <button class="filter-select" data-select>
+              <div class="select-value" data-selecct-value>Select category</div>
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+            </button>
+
+            <ul class="select-list">
+              <li class="select-item"><button data-select-item>All</button></li>
+              <li class="select-item"><button data-select-item>Distributed Systems</button></li>
+              <li class="select-item"><button data-select-item>Concurrency &amp; Engines</button></li>
+              <li class="select-item"><button data-select-item>Cloud &amp; Benchmarks</button></li>
+            </ul>
+          </div>
+
+          <ul class="project-list">
+
+            <!-- PROJECT 1: Rate Limiter & API Gateway -->
+            <li class="project-item active" data-filter-item data-category="distributed systems"
+                data-project-item
+                data-project-title="Distributed Rate Limiter &amp; API Gateway"
+                data-project-category="Distributed Systems &bull; Spring Boot 3"
+                data-project-img="./assets/images/project-ratelimiter.svg"
+                data-project-github="https://github.com"
+                data-project-demo="#">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-ratelimiter.svg" alt="Distributed Rate Limiter &amp; API Gateway" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">
+                  Distributed Rate Limiter + API Gateway
+                  <span class="status-pill status-active">Core Architecture</span>
+                </h3>
+
+                <p class="project-category">Spring Cloud Gateway &bull; Redis &bull; Lua &bull; Resilience4j</p>
+
+                <div class="project-tags">
+                  <span class="project-tag tag-blue">Spring Cloud Gateway</span>
+                  <span class="project-tag tag-amber">Redis Lua</span>
+                  <span class="project-tag tag-purple">Resilience4j</span>
+                  <span class="project-tag tag-green">Gatling p99</span>
+                </div>
+
+                <p class="project-desc-preview">
+                  High-throughput rate limiter with Token Bucket &amp; Sliding Window backed by Redis cluster via atomic Lua scripts. Built with Resilience4j circuit breakers and Prometheus metrics.
+                </p>
+
+                <!-- Hidden template content for modal -->
+                <div class="project-modal-source" style="display: none;">
+                  <div class="project-kpi-grid">
+                    <div class="kpi-card">
+                      <div class="kpi-label">Peak Throughput</div>
+                      <div class="kpi-value" style="color: #38bdf8;">45,000+ RPS</div>
+                    </div>
+                    <div class="kpi-card">
+                      <div class="kpi-label">p99 Latency</div>
+                      <div class="kpi-value" style="color: #34d399;">&lt; 1.8 ms</div>
+                    </div>
+                    <div class="kpi-card">
+                      <div class="kpi-label">Concurrency Model</div>
+                      <div class="kpi-value" style="color: #fbbf24;">Atomic Lua</div>
+                    </div>
+                    <div class="kpi-card">
+                      <div class="kpi-label">Observability</div>
+                      <div class="kpi-value" style="color: #c084fc;">Prometheus/Grafana</div>
+                    </div>
+                  </div>
+
+                  <h4 class="modal-section-title"><ion-icon name="hardware-chip-outline"></ion-icon> Architectural Highlights</h4>
+                  <ul class="modal-feature-list">
+                    <li class="modal-feature-item"><strong>Atomic Algorithm Execution:</strong> Token Bucket and Sliding Window Log algorithms written directly in Lua scripts executed atomically on Redis nodes via Lettuce client, eliminating distributed race conditions.</li>
+                    <li class="modal-feature-item"><strong>Resilience &amp; Outage Strategy:</strong> Circuit breaker via Resilience4j with configurable Fail-Open vs. Fail-Closed degradation policy during Redis partitions to prevent downstream cascading failures.</li>
+                    <li class="modal-feature-item"><strong>Low-Level Gateways:</strong> Extensible filter chain integrated with Spring Cloud Gateway (Netty-based reactive pipeline).</li>
+                    <li class="modal-feature-item"><strong>Stress Testing &amp; Metrics:</strong> Gatling Java DSL and k6 load testing scenarios publishing real-time p95/p99 latency histograms, throughput graphs, and rejection percentages to Grafana.</li>
+                    <li class="modal-feature-item"><strong>JMH Microbenchmarks:</strong> Microbenchmark suite testing local token evaluation hot path against concurrent contention.</li>
+                  </ul>
+                </div>
+              </a>
+            </li>
+
+
+            <!-- PROJECT 2: Job Queue / Workflow Engine -->
+            <li class="project-item active" data-filter-item data-category="concurrency &amp; engines"
+                data-project-item
+                data-project-title="Distributed Job Queue &amp; Workflow Engine"
+                data-project-category="High-Concurrency Backend &bull; Java 21"
+                data-project-img="./assets/images/project-jobqueue.svg"
+                data-project-github="https://github.com"
+                data-project-demo="#">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-jobqueue.svg" alt="Distributed Job Queue &amp; Workflow Engine" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">
+                  Distributed Job Queue &amp; Workflow Engine
+                  <span class="status-pill status-benchmark">Java 21 Loom</span>
+                </h3>
+
+                <p class="project-category">PostgreSQL SKIP LOCKED &bull; Virtual Threads &bull; Flyway</p>
+
+                <div class="project-tags">
+                  <span class="project-tag tag-green">Java 21 Virtual Threads</span>
+                  <span class="project-tag tag-blue">PostgreSQL Lock-Free</span>
+                  <span class="project-tag tag-amber">Flyway Schema</span>
+                  <span class="project-tag tag-purple">Testcontainers</span>
+                </div>
+
+                <p class="project-desc-preview">
+                  High-reliability distributed job broker using PostgreSQL <code>SELECT ... FOR UPDATE SKIP LOCKED</code>. Powered by Java 21 Virtual Threads, dead-letter queues, and graceful shutdown recovery.
+                </p>
+
+                <!-- Hidden template content for modal -->
+                <div class="project-modal-source" style="display: none;">
+                  <div class="project-kpi-grid">
+                    <div class="kpi-card">
+                      <div class="kpi-label">Worker Concurrency</div>
+                      <div class="kpi-value" style="color: #34d399;">10,000+ Tasks</div>
+                    </div>
+                    <div class="kpi-card">
+                      <div class="kpi-label">Lock Contention</div>
+                      <div class="kpi-value" style="color: #38bdf8;">0% (SKIP LOCKED)</div>
+                    </div>
+                    <div class="kpi-card">
+                      <div class="kpi-label">Reliability</div>
+                      <div class="kpi-value" style="color: #fb7185;">DLQ + Retries</div>
+                    </div>
+                    <div class="kpi-card">
+                      <div class="kpi-label">Integration Tests</div>
+                      <div class="kpi-value" style="color: #a855f7;">Testcontainers</div>
+                    </div>
+                  </div>
+
+                  <h4 class="modal-section-title"><ion-icon name="hardware-chip-outline"></ion-icon> Architectural Highlights</h4>
+                  <ul class="modal-feature-list">
+                    <li class="modal-feature-item"><strong>Lock-Free Queue Dequeue:</strong> Employs PostgreSQL <code>SELECT ... FOR UPDATE SKIP LOCKED</code> via Spring JDBC / jOOQ, enabling parallel workers to poll without deadlocks or row-level lock contention.</li>
+                    <li class="modal-feature-item"><strong>Java 21 Virtual Threads:</strong> Lightweight worker dispatching over virtual threads, scaling to thousands of concurrent jobs with minimal memory overhead and zero OS thread starvation.</li>
+                    <li class="modal-feature-item"><strong>Reliability Primitives:</strong> Exponential backoff retry policies, poison pill quarantine into Dead-Letter Queues (DLQ), visibility timeouts, and worker heartbeats with auto-reclaim on crashed nodes.</li>
+                    <li class="modal-feature-item"><strong>Testcontainers Integration Testing:</strong> Real PostgreSQL containers running in CI. Simulates mid-execution worker kill, network partition, and verifying idempotent reprocessing with zero message duplication.</li>
+                    <li class="modal-feature-item"><strong>Flyway Schema Evolution:</strong> Version-controlled database migrations ensuring seamless CI/CD rollouts and rollback safety.</li>
+                  </ul>
+                </div>
+              </a>
+            </li>
+
+
+            <!-- PROJECT 3: Full-Stack Cloud Architecture -->
+            <li class="project-item active" data-filter-item data-category="cloud &amp; benchmarks"
+                data-project-item
+                data-project-title="Full-Stack Cloud Infrastructure: React + Spring Boot"
+                data-project-category="Cloud Deployments &bull; Docker"
+                data-project-img="./assets/images/project-fullstack.svg"
+                data-project-github="https://github.com"
+                data-project-demo="#">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-fullstack.svg" alt="React and Spring Boot Hosting" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">
+                  Full-Stack Cloud Topology
+                  <span class="status-pill status-cloud">Cloudflare + Render</span>
+                </h3>
+
+                <p class="project-category">React &bull; Spring Boot &bull; Docker &bull; Cloudflare Pages</p>
+
+                <div class="project-tags">
+                  <span class="project-tag tag-amber">Cloudflare Pages</span>
+                  <span class="project-tag tag-green">Render Docker</span>
+                  <span class="project-tag tag-blue">Postgres &amp; Redis</span>
+                  <span class="project-tag tag-purple">GitHub Actions</span>
+                </div>
+
+                <p class="project-desc-preview">
+                  Production hosting blueprint. React SPAs and portfolio deployed on Cloudflare Pages global edge; Spring Boot REST APIs and DB containers deployed on Render with Docker.
+                </p>
+
+                <!-- Hidden template content for modal -->
+                <div class="project-modal-source" style="display: none;">
+                  <div class="project-kpi-grid">
+                    <div class="kpi-card">
+                      <div class="kpi-label">Edge TTFB</div>
+                      <div class="kpi-value" style="color: #38bdf8;">&lt; 50 ms</div>
+                    </div>
+                    <div class="kpi-card">
+                      <div class="kpi-label">Backend Deployment</div>
+                      <div class="kpi-value" style="color: #34d399;">Render Container</div>
+                    </div>
+                    <div class="kpi-card">
+                      <div class="kpi-label">SSL &amp; CDN</div>
+                      <div class="kpi-value" style="color: #f97316;">Cloudflare Edge</div>
+                    </div>
+                    <div class="kpi-card">
+                      <div class="kpi-label">Local Dev</div>
+                      <div class="kpi-value" style="color: #c084fc;">Docker Compose</div>
+                    </div>
+                  </div>
+
+                  <h4 class="modal-section-title"><ion-icon name="hardware-chip-outline"></ion-icon> Architectural Highlights</h4>
+                  <ul class="modal-feature-list">
+                    <li class="modal-feature-item"><strong>Decoupled Edge Frontend:</strong> Static portfolio and React applications built with Vite and distributed globally through Cloudflare Pages CDN for instant caching and zero server costs.</li>
+                    <li class="modal-feature-item"><strong>Containerized Spring Boot API:</strong> Docker multi-stage builds deployed on Render with automated zero-downtime health probes and HikariCP connection pooling.</li>
+                    <li class="modal-feature-item"><strong>Single-Command Local Environment:</strong> Complete <code>docker-compose.yml</code> provisioning API Gateway, Worker Engine, Postgres, Redis, Prometheus, and Grafana locally in one command.</li>
+                  </ul>
+                </div>
+              </a>
+            </li>
+
+
+            <!-- PROJECT 4: JMH Benchmarking & Concurrency Lab -->
+            <li class="project-item active" data-filter-item data-category="cloud &amp; benchmarks"
+                data-project-item
+                data-project-title="High-Concurrency JMH Benchmarking Suite"
+                data-project-category="Performance Benchmarking &bull; Loom"
+                data-project-img="./assets/images/project-benchmarks.svg"
+                data-project-github="https://github.com"
+                data-project-demo="#">
+              <a href="#">
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+                  <img src="./assets/images/project-benchmarks.svg" alt="JMH Benchmarking Lab" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">
+                  JMH Microbenchmark &amp; Loom Lab
+                  <span class="status-pill status-benchmark">+1,400% Throughput</span>
+                </h3>
+
+                <p class="project-category">Java Microbenchmark Harness &bull; Project Loom &bull; k6</p>
+
+                <div class="project-tags">
+                  <span class="project-tag tag-purple">OpenJDK JMH</span>
+                  <span class="project-tag tag-green">Virtual vs Fixed Pool</span>
+                  <span class="project-tag tag-blue">k6 &amp; Gatling</span>
+                  <span class="project-tag tag-amber">Sub-millisecond</span>
+                </div>
+
+                <p class="project-desc-preview">
+                  Rigorous empirical benchmark comparing Java 21 Virtual Threads with fixed platform thread pools under 10k blocking calls, plus JMH hot-path rate limiter analysis.
+                </p>
+
+                <!-- Hidden template content for modal -->
+                <div class="project-modal-source" style="display: none;">
+                  <div class="project-kpi-grid">
+                    <div class="kpi-card">
+                      <div class="kpi-label">Throughput Gain</div>
+                      <div class="kpi-value" style="color: #34d399;">+1,400%</div>
+                    </div>
+                    <div class="kpi-card">
+                      <div class="kpi-label">Thread Memory</div>
+                      <div class="kpi-value" style="color: #38bdf8;">~few hundred B</div>
+                    </div>
+                    <div class="kpi-card">
+                      <div class="kpi-label">Harness</div>
+                      <div class="kpi-value" style="color: #c084fc;">OpenJDK JMH</div>
+                    </div>
+                    <div class="kpi-card">
+                      <div class="kpi-label">Verification</div>
+                      <div class="kpi-value" style="color: #fbbf24;">Gatling / k6</div>
+                    </div>
+                  </div>
+
+                  <h4 class="modal-section-title"><ion-icon name="hardware-chip-outline"></ion-icon> Architectural Highlights</h4>
+                  <ul class="modal-feature-list">
+                    <li class="modal-feature-item"><strong>Virtual Threads vs. Fixed Thread Pool:</strong> Measured response degradation under 10,000 concurrent simulated blocking calls. Virtual threads maintained 48,500 req/sec while platform thread pools bottlenecked at 3,200 req/sec due to OS context switching.</li>
+                    <li class="modal-feature-item"><strong>JMH Hot-Path Optimization:</strong> Profiling the Token Bucket evaluation method for nanosecond latency and zero allocation on the critical request path.</li>
+                    <li class="modal-feature-item"><strong>Reproducible Test Harness:</strong> Packaged as runnable Gradle tasks and Docker containers with automated Markdown output generation.</li>
+                  </ul>
+                </div>
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+      <!--
+        - #RESUME
+      -->
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">Resume &amp; Skills</h2>
+        </header>
+
+        <!-- Technical Skills Matrix -->
+        <section class="skill" style="margin-bottom: 35px;">
+
+          <h3 class="h3 skills-title" style="margin-bottom: 20px;">Technical Stack Matrix</h3>
+
+          <div class="skills-group">
+            <h4 class="skills-group-title"><ion-icon name="code-slash-outline"></ion-icon> Core Languages &amp; Runtimes</h4>
+            <div class="skill-chips">
+              <span class="skill-chip">Java 21 (Loom, Records, Pattern Matching)</span>
+              <span class="skill-chip">SQL (PostgreSQL)</span>
+              <span class="skill-chip">Lua (Atomic Redis Scripts)</span>
+              <span class="skill-chip">JavaScript / TypeScript (React)</span>
+              <span class="skill-chip">Bash / Shell</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <h4 class="skills-group-title"><ion-icon name="layers-outline"></ion-icon> Frameworks &amp; Distributed Systems</h4>
+            <div class="skill-chips">
+              <span class="skill-chip">Spring Boot 3</span>
+              <span class="skill-chip">Spring Cloud Gateway</span>
+              <span class="skill-chip">Resilience4j (Circuit Breakers)</span>
+              <span class="skill-chip">Flyway DB Migrations</span>
+              <span class="skill-chip">jOOQ / Spring JDBC</span>
+              <span class="skill-chip">React 18 / Vite</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <h4 class="skills-group-title"><ion-icon name="server-outline"></ion-icon> Storage, Caching &amp; Queuing</h4>
+            <div class="skill-chips">
+              <span class="skill-chip">PostgreSQL (SELECT FOR UPDATE SKIP LOCKED)</span>
+              <span class="skill-chip">Redis (Lettuce, Cluster, Sliding Window)</span>
+              <span class="skill-chip">Redis Streams</span>
+              <span class="skill-chip">Dead-Letter Queues (DLQ)</span>
+              <span class="skill-chip">HikariCP Connection Pool</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <h4 class="skills-group-title"><ion-icon name="speedometer-outline"></ion-icon> Concurrency, Testing &amp; Observability</h4>
+            <div class="skill-chips">
+              <span class="skill-chip">Virtual Threads (ExecutorService)</span>
+              <span class="skill-chip">OpenJDK JMH Microbenchmarks</span>
+              <span class="skill-chip">Testcontainers (Integration Chaos)</span>
+              <span class="skill-chip">Gatling (Java DSL) &amp; k6 Load Testing</span>
+              <span class="skill-chip">Micrometer + Prometheus + Grafana</span>
+            </div>
+          </div>
+
+          <div class="skills-group">
+            <h4 class="skills-group-title"><ion-icon name="cloud-upload-outline"></ion-icon> Cloud, DevOps &amp; Hosting</h4>
+            <div class="skill-chips">
+              <span class="skill-chip">Cloudflare Pages (Global Edge CDN)</span>
+              <span class="skill-chip">Render (Containerized Cloud Hosting)</span>
+              <span class="skill-chip">Docker &amp; Docker Compose</span>
+              <span class="skill-chip">GitHub Actions CI/CD</span>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- Education -->
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Education &amp; Foundations</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Bachelor of Technology / Computer Science</h4>
+              <span>Core Foundations</span>
+              <p class="timeline-text">
+                In-depth coursework in Distributed Systems, Operating Systems, Database Management Systems (ACID, Concurrency Control, Indexing), Data Structures &amp; Algorithms, and Computer Networks.
+              </p>
+            </li>
+
+          </ol>
+
+        </section>
+
+        <!-- Key Engineering Milestones -->
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="briefcase-outline"></ion-icon>
+            </div>
+            <h3 class="h3">System Architectures &amp; Implementations</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Distributed Rate Limiter &amp; Resilient API Gateway</h4>
+              <span>Spring Cloud Gateway &bull; Redis Lua &bull; Resilience4j</span>
+              <p class="timeline-text">
+                Designed and engineered a high-throughput API gateway capable of 45,000+ RPS. Implemented Token Bucket and Sliding Window rate limiting algorithms executed via atomic Redis Lua scripts to prevent race conditions. Integrated Resilience4j circuit breaking with fail-open fallback and Micrometer metrics.
+              </p>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Fault-Tolerant Job Queue &amp; Workflow Engine</h4>
+              <span>Java 21 Virtual Threads &bull; PostgreSQL &bull; Testcontainers</span>
+              <p class="timeline-text">
+                Architected an asynchronous job processing engine with PostgreSQL <code>SELECT ... FOR UPDATE SKIP LOCKED</code>, scaling to 10,000+ concurrent tasks using Java 21 Virtual Threads. Engineered exponential backoff retries, dead-letter queues, worker heartbeats, and validated partition recovery using Testcontainers.
+              </p>
+            </li>
+
+          </ol>
+
+        </section>
+
+      </article>
+
+
+
+      <!--
+        - #CONTACT
+      -->
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox style="margin-bottom: 25px;">
+          <figure>
+            <div style="background: var(--eerie-black-2); border: 1px solid var(--jet); border-radius: 16px; padding: 30px; text-align: center;">
+              <h3 style="color: var(--white-1); font-size: 18px; margin-bottom: 8px;">Let's Connect</h3>
+              <p style="color: var(--light-gray); font-size: 14px; max-width: 500px; margin: 0 auto 20px auto;">
+                Interested in discussing high-concurrency systems, low-latency microservices, or collaboration? Reach out directly.
+              </p>
+              <a href="mailto:anannyroyzada8@gmail.com" class="btn-action btn-primary" style="display: inline-flex;">
+                <ion-icon name="mail-outline"></ion-icon> anannyroyzada8@gmail.com
+              </a>
+            </div>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Direct Message</h3>
+
+          <form action="mailto:anannyroyzada8@gmail.com" method="POST" enctype="text/plain" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" disabled data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+
+  <!--
+    - #DEDICATED PROJECT ARCHITECTURE MODAL
+  -->
+  <div class="project-modal-container" id="project-modal-container">
+    <div class="overlay" data-overlay></div>
+
+    <div class="project-modal-content">
+      <button class="modal-close-btn" id="project-modal-close-btn" aria-label="Close modal">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+      <img src="" alt="" class="project-modal-img" id="project-modal-img">
+
+      <div class="modal-header-row">
+        <div>
+          <h3 class="modal-project-title" id="project-modal-title">Project Title</h3>
+          <p class="modal-project-category" id="project-modal-category">Category</p>
+        </div>
+      </div>
+
+      <div id="project-modal-body">
+        <!-- Injected dynamically via script.js -->
+      </div>
+
+      <div class="project-modal-actions">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn-action btn-primary" id="project-modal-github">
+          <ion-icon name="logo-github"></ion-icon>
+          <span>View GitHub Repository</span>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-action" id="project-modal-demo">
+          <ion-icon name="globe-outline"></ion-icon>
+          <span>Live Deployment / Docs</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <!--
+    - #ORIGINAL TESTIMONIALS MODAL CONTAINER (PRESERVED)
+  -->
+  <div class="modal-container" data-modal-container>
+    <div class="overlay" data-overlay></div>
+
+    <section class="testimonials-modal">
+      <button class="modal-close-btn" data-modal-close-btn>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+      <div class="modal-img-wrapper">
+        <figure class="modal-avatar-box">
+          <img src="./assets/images/avatar-1.png" alt="Avatar" width="80" data-modal-img>
+        </figure>
+        <img src="./assets/images/icon-quote.svg" alt="quote icon">
+      </div>
+
+      <div class="modal-content">
+        <h4 class="h3 modal-title" data-modal-title>Review</h4>
+        <time datetime="2026-06-14">June 2026</time>
+        <div data-modal-text>
+          <p></p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+  <!--
+    - Custom JS Link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - Ion Icon Link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

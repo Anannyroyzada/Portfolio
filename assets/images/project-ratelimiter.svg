@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121824"/>
+      <stop offset="100%" stop-color="#0a0d14"/>
+    </linearGradient>
+    <linearGradient id="cyan-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="amber-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="emerald-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="purple-glow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#bg)"/>
+  
+  <!-- Subtle Grid Pattern -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <line x1="100" y1="0" x2="100" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="500"/>
+    <line x1="300" y1="0" x2="300" y2="500"/>
+    <line x1="400" y1="0" x2="400" y2="500"/>
+    <line x1="500" y1="0" x2="500" y2="500"/>
+    <line x1="600" y1="0" x2="600" y2="500"/>
+    <line x1="700" y1="0" x2="700" y2="500"/>
+    <line x1="0" y1="100" x2="800" y2="100"/>
+    <line x1="0" y1="200" x2="800" y2="200"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="400" x2="800" y2="400"/>
+  </g>
+
+  <!-- Title Badge -->
+  <rect x="50" y="35" width="220" height="32" rx="16" fill="#1e293b" stroke="#334155"/>
+  <circle cx="68" cy="51" r="5" fill="#38bdf8"/>
+  <text x="82" y="56" fill="#94a3b8" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" letter-spacing="1">SPRING CLOUD GATEWAY</text>
+
+  <!-- Header Text -->
+  <text x="50" y="105" fill="#f8fafc" font-family="'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="700">Distributed Rate Limiter</text>
+  <text x="50" y="130" fill="#94a3b8" font-family="'Segoe UI', Roboto, sans-serif" font-size="14">Token Bucket &amp; Sliding Window with Redis + Atomic Lua Scripts</text>
+
+  <!-- Client Traffic Node -->
+  <g transform="translate(60, 200)" filter="url(#shadow)">
+    <rect width="130" height="120" rx="12" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
+    <circle cx="65" cy="45" r="20" fill="#0369a1" fill-opacity="0.3"/>
+    <path d="M55 45h20M65 35v20" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round"/>
+    <text x="65" y="85" fill="#e2e8f0" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="600" text-anchor="middle">Client Traffic</text>
+    <text x="65" y="102" fill="#38bdf8" font-family="'Segoe UI', sans-serif" font-size="11" text-anchor="middle">50,000 req/s</text>
+  </g>
+
+  <!-- Flow Line 1 -->
+  <path d="M190 260 L 260 260" stroke="#38bdf8" stroke-width="2.5" stroke-dasharray="6,4"/>
+  <polygon points="262,260 254,255 254,265" fill="#38bdf8"/>
+
+  <!-- API Gateway Box -->
+  <g transform="translate(265, 175)" filter="url(#shadow)">
+    <rect width="210" height="170" rx="14" fill="#1e293b" stroke="#a855f7" stroke-width="1.5"/>
+    <rect x="15" y="15" width="180" height="30" rx="6" fill="#7c3aed" fill-opacity="0.2"/>
+    <text x="105" y="35" fill="#c084fc" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="700" text-anchor="middle">API GATEWAY</text>
+    <text x="25" y="75" fill="#f1f5f9" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">Spring Cloud Gateway</text>
+    <text x="25" y="98" fill="#94a3b8" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Resilience4j Circuit Breaker</text>
+    <text x="25" y="118" fill="#94a3b8" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Fail-Open / Fail-Closed</text>
+    <text x="25" y="138" fill="#94a3b8" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Micrometer Observability</text>
+  </g>
+
+  <!-- Flow Line 2 (Dual Direction to Redis) -->
+  <path d="M475 240 L 545 240" stroke="#f59e0b" stroke-width="2.5"/>
+  <path d="M545 280 L 475 280" stroke="#10b981" stroke-width="2.5"/>
+  <text x="510" y="232" fill="#fbbf24" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="600" text-anchor="middle">EVAL Lua</text>
+  <text x="510" y="298" fill="#34d399" font-family="'Segoe UI', sans-serif" font-size="10" font-weight="600" text-anchor="middle">Token / Pass</text>
+
+  <!-- Redis Cluster Node -->
+  <g transform="translate(550, 185)" filter="url(#shadow)">
+    <rect width="190" height="150" rx="12" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+    <rect x="15" y="15" width="160" height="28" rx="6" fill="#b45309" fill-opacity="0.25"/>
+    <text x="95" y="34" fill="#fbbf24" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" text-anchor="middle">REDIS CLUSTER</text>
+    <text x="25" y="70" fill="#f1f5f9" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">Lettuce Client Pool</text>
+    <text x="25" y="92" fill="#94a3b8" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Atomic Lua Script Execution</text>
+    <text x="25" y="112" fill="#94a3b8" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Sliding Window Counter</text>
+    <text x="25" y="132" fill="#34d399" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600">&#x2713; Sub-millisecond p99</text>
+  </g>
+
+  <!-- Bottom Metric Badges -->
+  <g transform="translate(60, 400)">
+    <rect width="155" height="55" rx="8" fill="#161e2e" stroke="#253248"/>
+    <text x="20" y="24" fill="#64748b" font-family="'Segoe UI', sans-serif" font-size="11">THROUGHPUT</text>
+    <text x="20" y="44" fill="#38bdf8" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="700">45,000+ RPS</text>
+  </g>
+
+  <g transform="translate(240, 400)">
+    <rect width="155" height="55" rx="8" fill="#161e2e" stroke="#253248"/>
+    <text x="20" y="24" fill="#64748b" font-family="'Segoe UI', sans-serif" font-size="11">LATENCY (P99)</text>
+    <text x="20" y="44" fill="#34d399" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="700">&lt; 1.8 ms</text>
+  </g>
+
+  <g transform="translate(420, 400)">
+    <rect width="165" height="55" rx="8" fill="#161e2e" stroke="#253248"/>
+    <text x="20" y="24" fill="#64748b" font-family="'Segoe UI', sans-serif" font-size="11">RESILIENCE</text>
+    <text x="20" y="44" fill="#fbbf24" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="700">Circuit Breaker</text>
+  </g>
+
+  <g transform="translate(610, 400)">
+    <rect width="130" height="55" rx="8" fill="#161e2e" stroke="#253248"/>
+    <text x="20" y="24" fill="#64748b" font-family="'Segoe UI', sans-serif" font-size="11">MONITORING</text>
+    <text x="20" y="44" fill="#c084fc" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="700">Grafana/Prom</text>
+  </g>
+</svg>
