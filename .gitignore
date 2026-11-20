@@ -16,3 +16,8 @@ vcard-personal-portfolio/
 *.log
 .env
 .env.local
+
+# Dependencies & Build Outputs
+node_modules/
+dist/
+.vite/
