@@ -1744,7 +1744,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    * PORTFOLIO
    */
 
-  .project-list { grid-template-columns: repeat(3, 1fr); }
+  .project-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
 
 
@@ -1803,17 +1803,18 @@ textarea.form-input::-webkit-resizer { display: none; }
    */
 
   main {
-    max-width: 1200px;
+    max-width: 1380px;
     margin-inline: auto;
     display: flex;
     justify-content: center;
     align-items: stretch;
-    gap: 25px;
+    gap: 30px;
   }
 
   .main-content {
-    min-width: 75%;
-    width: 75%;
+    flex: 1;
+    min-width: 0;
+    width: auto;
     margin: 0;
   }
 
@@ -1829,8 +1830,12 @@ textarea.form-input::-webkit-resizer { display: none; }
     max-height: max-content;
     height: 100%;
     margin-bottom: 0;
-    padding-top: 60px;
+    padding-top: 50px;
+    padding-inline: 25px;
     z-index: 1;
+    min-width: 320px;
+    width: 320px;
+    flex-shrink: 0;
   }
 
   .sidebar-info { flex-direction: column; }
@@ -1838,11 +1843,17 @@ textarea.form-input::-webkit-resizer { display: none; }
   .avatar-box img { width: 150px; }
 
   .info-content .name {
-    white-space: nowrap;
+    white-space: normal;
     text-align: center;
+    font-size: 24px;
+    line-height: 1.3;
   }
 
-  .info-content .title { margin: auto; }
+  .info-content .title {
+    margin: auto;
+    white-space: nowrap;
+    font-size: 13px;
+  }
 
   .info_more-btn { display: none; }
 
@@ -1854,14 +1865,16 @@ textarea.form-input::-webkit-resizer { display: none; }
   .contacts-list { grid-template-columns: 1fr; }
 
   .contact-info :is(.contact-link) {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    white-space: normal;
+    word-break: break-word;
+    overflow: visible;
+    text-overflow: unset;
   }
 
   .contact-info :is(.contact-link, time, address) {
-    --fs-7: 14px;
+    --fs-7: 13.5px;
     font-weight: var(--fw-300);
+    line-height: 1.45;
   }
 
   .separator:last-of-type {
@@ -2427,4 +2440,188 @@ textarea.form-input::-webkit-resizer { display: none; }
   color: var(--light-gray);
   font-size: var(--fs-6);
   line-height: 1.6;
+}
+
+
+/*-----------------------------------*\
+  #PROJECT CARD CONSISTENCY & UNIFORM HEIGHT
+\*-----------------------------------*/
+
+.project-list {
+  display: grid !important;
+  grid-template-columns: 1fr;
+  gap: 25px;
+  align-items: stretch;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .project-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (min-width: 1250px) {
+  .project-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+.project-item {
+  display: none;
+  height: 100%;
+}
+
+.project-item.active {
+  display: flex !important;
+  flex-direction: column;
+  height: 100% !important;
+  animation: scaleUp 0.25s ease forwards;
+}
+
+.project-card {
+  background: var(--eerie-black-2);
+  border: 1px solid var(--jet);
+  border-radius: 18px;
+  padding: 22px;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+  width: 100%;
+  transition: var(--transition-1);
+  box-sizing: border-box;
+}
+
+.project-card:hover {
+  border-color: var(--orange-yellow-crayola);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.project-card > div:first-child {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* 1. Uniform Image / Blueprint Container */
+.project-card .project-img {
+  position: relative;
+  width: 100%;
+  height: 185px !important;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 16px;
+  background: #0f172a;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-card .project-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-1);
+}
+
+.project-card:hover .project-img img {
+  transform: scale(1.04);
+}
+
+/* 2. Uniform Title Area (standardized 2-line height) */
+.project-card .project-title {
+  color: var(--white-2);
+  font-size: 17px;
+  font-weight: var(--fw-600);
+  line-height: 1.4;
+  margin-top: 4px;
+  margin-bottom: 6px;
+  margin-left: 0 !important;
+  min-height: 48px;
+  max-height: 48px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* 3. Uniform Category Subtitle */
+.project-card .project-category {
+  color: var(--orange-yellow-crayola);
+  font-size: 13px;
+  font-weight: var(--fw-400);
+  margin-bottom: 10px;
+  margin-left: 0 !important;
+  min-height: 20px;
+  max-height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 4. Uniform Tech Tags Area */
+.project-card .project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  min-height: 58px;
+  max-height: 58px;
+  overflow: hidden;
+  align-content: flex-start;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.project-card .project-tag {
+  font-size: 11px;
+  padding: 3px 8px;
+  line-height: 1.2;
+}
+
+/* 5. Uniform Description Preview Area */
+.project-card .project-desc-preview {
+  color: var(--light-gray);
+  font-size: 13px;
+  line-height: 1.6;
+  min-height: 62px;
+  max-height: 62px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+/* 6. Pinned Action Buttons at Bottom Baseline */
+.project-card .project-card-actions {
+  margin-top: auto !important;
+  padding-top: 14px;
+  border-top: 1px solid var(--jet);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.project-card-actions .btn-repo {
+  flex: 1.1;
+  justify-content: center;
+  font-size: 12px;
+  padding: 8px 8px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.project-card-actions .btn-specs {
+  flex: 1;
+  justify-content: center;
+  font-size: 12px;
+  padding: 8px 8px;
+  white-space: nowrap;
+  text-align: center;
 }
