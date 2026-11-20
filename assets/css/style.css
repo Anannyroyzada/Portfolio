@@ -2244,3 +2244,187 @@ textarea.form-input::-webkit-resizer { display: none; }
   border-color: var(--orange-yellow-crayola);
   color: var(--white-1);
 }
+
+
+/*-----------------------------------*\
+  #PROJECT CARD ACTIONS & DIRECT BUTTONS
+\*-----------------------------------*/
+
+.project-card-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--jet);
+  flex-wrap: wrap;
+}
+
+.btn-repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffdb70 !important;
+  color: #121212 !important;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: var(--transition-1);
+  box-shadow: 0 3px 10px rgba(255, 219, 112, 0.3);
+  cursor: pointer;
+  border: none;
+}
+
+.btn-repo:hover {
+  background: #ffffff !important;
+  color: #000000 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+.btn-specs {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--border-gradient-onyx);
+  color: var(--white-2);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--jet);
+  cursor: pointer;
+  transition: var(--transition-1);
+}
+
+.btn-specs:hover {
+  border-color: var(--orange-yellow-crayola);
+  color: var(--orange-yellow-crayola);
+  transform: translateY(-1px);
+}
+
+/* Modal Direct Buttons */
+.modal-btn-repo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffdb70 !important;
+  color: #121212 !important;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 22px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: var(--transition-1);
+  box-shadow: 0 3px 12px rgba(255, 219, 112, 0.3);
+  cursor: pointer;
+}
+
+.modal-btn-repo:hover {
+  background: #ffffff !important;
+  color: #000000 !important;
+  transform: translateY(-2px);
+}
+
+/*-----------------------------------*\
+  #CONTACT INFO CARDS GRID (FIX FOR MAPBOX BLANK BOX)
+\*-----------------------------------*/
+
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.contact-info-card {
+  background: var(--eerie-black-2);
+  border: 1px solid var(--jet);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  transition: var(--transition-1);
+}
+
+.contact-info-card:hover {
+  border-color: var(--orange-yellow-crayola);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2);
+}
+
+.contact-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: var(--border-gradient-onyx);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--orange-yellow-crayola);
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.contact-card-title {
+  color: var(--light-gray-70);
+  font-size: var(--fs-8);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.contact-card-value {
+  color: var(--white-1);
+  font-size: 15px;
+  font-weight: 600;
+  word-break: break-all;
+}
+
+/* Work Experience Pill */
+.exp-badge {
+  display: inline-block;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+}
+
+.achievement-card {
+  background: var(--border-gradient-onyx);
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  padding: 18px 20px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.achievement-icon {
+  color: var(--orange-yellow-crayola);
+  font-size: 28px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.achievement-title {
+  color: var(--white-2);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-600);
+  margin-bottom: 4px;
+}
+
+.achievement-text {
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  line-height: 1.6;
+}

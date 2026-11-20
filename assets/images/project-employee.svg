@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="emp-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#022c22"/>
+    </linearGradient>
+    <filter id="emp-sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#emp-bg)"/>
+  <rect x="50" y="35" width="220" height="32" rx="16" fill="#047857" stroke="#10b981"/>
+  <circle cx="68" cy="51" r="5" fill="#34d399"/>
+  <text x="82" y="56" fill="#d1fae5" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">SPRING BOOT &bull; JPA</text>
+  <text x="50" y="105" fill="#f8fafc" font-family="'Segoe UI', sans-serif" font-size="24" font-weight="700">Employee Management System</text>
+  <text x="50" y="130" fill="#a7f3d0" font-family="'Segoe UI', sans-serif" font-size="14">Enterprise RESTful CRUD APIs with Layered Architecture &amp; Hibernate</text>
+
+  <!-- Flow Boxes -->
+  <g transform="translate(60, 180)" filter="url(#emp-sh)">
+    <rect width="200" height="170" rx="12" fill="#064e3b" stroke="#34d399" stroke-width="1.5"/>
+    <text x="25" y="35" fill="#6ee7b7" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700">REST Endpoints</text>
+    <text x="25" y="70" fill="#e2e8f0" font-family="'Segoe UI', sans-serif" font-size="12">&#x2022; GET, POST, PUT, DELETE</text>
+    <text x="25" y="95" fill="#e2e8f0" font-family="'Segoe UI', sans-serif" font-size="12">&#x2022; DTO Pattern &amp; Mapper</text>
+    <text x="25" y="120" fill="#e2e8f0" font-family="'Segoe UI', sans-serif" font-size="12">&#x2022; Exception Advice</text>
+    <text x="25" y="145" fill="#6ee7b7" font-family="'Segoe UI', sans-serif" font-size="12">&#x2713; HTTP Status Codes</text>
+  </g>
+  <path d="M260 265 L 315 265" stroke="#34d399" stroke-width="2.5"/>
+  <polygon points="318,265 310,260 310,270" fill="#34d399"/>
+  <g transform="translate(320, 180)" filter="url(#emp-sh)">
+    <rect width="220" height="170" rx="12" fill="#064e3b" stroke="#38bdf8" stroke-width="1.5"/>
+    <text x="25" y="35" fill="#38bdf8" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700">Service &amp; JPA Layer</text>
+    <text x="25" y="70" fill="#e2e8f0" font-family="'Segoe UI', sans-serif" font-size="12">&#x2022; Business Validation</text>
+    <text x="25" y="95" fill="#e2e8f0" font-family="'Segoe UI', sans-serif" font-size="12">&#x2022; Spring Data JPA Repo</text>
+    <text x="25" y="120" fill="#e2e8f0" font-family="'Segoe UI', sans-serif" font-size="12">&#x2022; Entity Relationships</text>
+    <text x="25" y="145" fill="#38bdf8" font-family="'Segoe UI', sans-serif" font-size="12">&#x2713; Transactional Bounds</text>
+  </g>
+  <path d="M540 265 L 595 265" stroke="#38bdf8" stroke-width="2.5"/>
+  <polygon points="598,265 590,260 590,270" fill="#38bdf8"/>
+  <g transform="translate(600, 180)" filter="url(#emp-sh)">
+    <rect width="140" height="170" rx="12" fill="#064e3b" stroke="#fbbf24" stroke-width="1.5"/>
+    <text x="20" y="35" fill="#fbbf24" font-family="'Segoe UI', sans-serif" font-size="14" font-weight="700">MySQL DB</text>
+    <text x="20" y="70" fill="#e2e8f0" font-family="'Segoe UI', sans-serif" font-size="12">&#x2022; Employees</text>
+    <text x="20" y="95" fill="#e2e8f0" font-family="'Segoe UI', sans-serif" font-size="12">&#x2022; Departments</text>
+    <text x="20" y="120" fill="#e2e8f0" font-family="'Segoe UI', sans-serif" font-size="12">&#x2022; Roles</text>
+    <text x="20" y="145" fill="#fbbf24" font-family="'Segoe UI', sans-serif" font-size="12">&#x2713; Foreign Keys</text>
+  </g>
+</svg>

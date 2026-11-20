@@ -182,12 +182,18 @@ const toggleProjectModal = function () {
 if (projectItems.length > 0 && projectModalContainer) {
   projectItems.forEach(item => {
     item.addEventListener("click", function (e) {
+      // Do not trigger modal if user clicked a direct external link/button (like GitHub repo)
+      if (e.target.closest(".btn-repo") || e.target.closest("a[target='_blank']")) {
+        return;
+      }
+
       e.preventDefault();
       
       const title = this.getAttribute("data-project-title") || "";
       const category = this.getAttribute("data-project-category") || "";
-      const img = this.getAttribute("data-project-img") || "";
-      const github = this.getAttribute("data-project-github") || "#";
+      const imgEl = this.querySelector(".project-img img") || this.querySelector("img");
+      const img = imgEl ? imgEl.src : (this.getAttribute("data-project-img") || "");
+      const github = this.getAttribute("data-project-github") || "https://github.com/Anannyroyzada";
       const demo = this.getAttribute("data-project-demo") || "#";
       const contentSource = this.querySelector(".project-modal-source");
 
