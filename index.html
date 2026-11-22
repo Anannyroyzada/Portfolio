@@ -1,1260 +1,1312 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ananny Royzada | Backend Software Engineer | Distributed Systems &amp; Java</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
+  <title>Ananny Royzada — Backend Engineer | Java, Spring Boot &amp; Distributed Systems</title>
+  <meta name="description" content="Ananny Royzada is a Backend Software Engineer at TCS building high-throughput Java and Spring Boot systems with Redis, PostgreSQL, and Java 21 virtual threads. Open to backend roles in India.">
+  <meta name="author" content="Ananny Royzada">
+  <meta name="keywords" content="Ananny Royzada, backend engineer, Java developer, Spring Boot, distributed systems, Redis, PostgreSQL, Java 21, virtual threads, India">
+  <meta name="theme-color" content="#070b12">
+  <meta name="color-scheme" content="dark light">
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="./assets/css/style.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ananny Royzada — Backend Engineer">
+  <meta property="og:description" content="Java + Spring Boot engineer building high-throughput APIs, Redis-backed rate limiters, and PostgreSQL job queues. Benchmarked, containerized, observable.">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:image" content="./og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ananny Royzada — Backend Engineer portfolio card">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ananny Royzada — Backend Engineer">
+  <meta name="twitter:description" content="Java + Spring Boot engineer building high-throughput APIs, Redis-backed rate limiters, and PostgreSQL job queues.">
+  <meta name="twitter:image" content="./og-image.png">
 
-  <!-- Google Fonts -->
+  <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="./assets/images/logo.ico" type="image/x-icon">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <script>
+    // Apply the saved theme before first paint to avoid a flash.
+    (function () {
+      document.documentElement.classList.add('js');
+      try {
+        var saved = localStorage.getItem('theme');
+        var forced = new URLSearchParams(window.location.search).get('theme');
+        var theme = (forced === 'light' || forced === 'dark')
+          ? forced
+          : (saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'));
+        document.documentElement.dataset.theme = theme;
+      } catch (error) { /* keep the default dark theme */ }
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ananny Royzada",
+    "jobTitle": "Backend Software Engineer",
+    "email": "mailto:ananny1807@gmail.com",
+    "telephone": "+91-8655704599",
+    "address": { "@type": "PostalAddress", "addressCountry": "IN" },
+    "worksFor": { "@type": "Organization", "name": "Tata Consultancy Services" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "SRM Institute of Science and Technology" },
+    "knowsAbout": ["Java", "Spring Boot", "Distributed Systems", "Redis", "PostgreSQL", "Java 21 Virtual Threads", "REST APIs", "Docker"],
+    "sameAs": [
+      "https://github.com/Anannyroyzada",
+      "https://www.linkedin.com/in/anannyroyzada/",
+      "https://leetcode.com/u/ananny/"
+    ]
+  }
+  </script>
 </head>
 
 <body>
 
-  <main>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <!--
-      - #SIDEBAR
-    -->
-    <aside class="sidebar" data-sidebar>
+  <div class="scroll-progress" data-scroll-progress aria-hidden="true"></div>
 
-      <div class="sidebar-info">
+  <!-- Inline icon sprite: no icon library, no extra requests. -->
+  <svg class="icon-sprite" aria-hidden="true" focusable="false" width="0" height="0">
+    <defs>
+      <symbol id="i-github" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.71.08-.71 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.25 5.69.41.35.78 1.05.78 2.12 0 1.53-.01 2.76-.01 3.14 0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/>
+      </symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/>
+      </symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/>
+      </symbol>
+      <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.7a16 16 0 0 0 6.3 6.3l1.24-1.24a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/>
+      </symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/>
+      </symbol>
+      <symbol id="i-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14M13 6l6 6-6 6"/>
+      </symbol>
+      <symbol id="i-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M7 17 17 7M7 7h10v10"/>
+      </symbol>
+      <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 19V5M5 12l7-7 7 7"/>
+      </symbol>
+      <symbol id="i-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 3v12M7 10l5 5 5-5M5 21h14"/>
+      </symbol>
+      <symbol id="i-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 3h7v7M10 14 21 3M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5"/>
+      </symbol>
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 6 9 17l-5-5"/>
+      </symbol>
+      <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6 6 18M6 6l12 12"/>
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 6h18M3 12h18M3 18h18"/>
+      </symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+      </symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </symbol>
+      <symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m6 9 6 6 6-6"/>
+      </symbol>
+      <symbol id="i-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4zM7 6H4a2 2 0 0 0 2 2M17 6h3a2 2 0 0 1-2 2"/>
+      </symbol>
+      <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 10 12 5 2 10l10 5 10-5zM6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/>
+      </symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M2 13h20"/>
+      </symbol>
+      <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/>
+      </symbol>
+      <symbol id="i-server" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M6 6.5h.01M6 17.5h.01"/>
+      </symbol>
+      <symbol id="i-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.66 4.03 3 9 3s9-1.34 9-3V5M3 12c0 1.66 4.03 3 9 3s9-1.34 9-3"/>
+      </symbol>
+      <symbol id="i-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M17.5 19H7a5 5 0 1 1 .9-9.9A6 6 0 0 1 19 12a4 4 0 0 1-1.5 7z"/>
+      </symbol>
+      <symbol id="i-terminal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m6 9 3 3-3 3M13 15h5"/>
+      </symbol>
+      <symbol id="i-zap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/>
+      </symbol>
+      <symbol id="i-activity" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+      </symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m12 2 9 5-9 5-9-5 9-5zM3 12l9 5 9-5M3 17l9 5 9-5"/>
+      </symbol>
+      <symbol id="i-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/>
+      </symbol>
+      <symbol id="i-branch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 3v12"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/>
+      </symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/>
+      </symbol>
+      <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+      </symbol>
+      <symbol id="i-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m12 3 1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9L12 3zM19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9L19 15z"/>
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>
+      </symbol>
+      <symbol id="i-gauge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 14l4-4M3.34 19a10 10 0 1 1 17.32 0"/>
+      </symbol>
+      <symbol id="i-workflow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="6" height="6" rx="1"/><rect x="15" y="15" width="6" height="6" rx="1"/><path d="M9 6h6a3 3 0 0 1 3 3v6"/>
+      </symbol>
+      <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/>
+      </symbol>
+      <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+      </symbol>
+      <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+      </symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+      </symbol>
+      <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
+      </symbol>
+      <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="8" r="6"/><path d="M15.5 13.5 17 22l-5-3-5 3 1.5-8.5"/>
+      </symbol>
+      <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/>
+      </symbol>
+      <symbol id="i-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+      </symbol>
+      <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+      </symbol>
+      <symbol id="i-trending" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m23 6-9.5 9.5-5-5L1 18M17 6h6v6"/>
+      </symbol>
+    </defs>
+  </svg>
 
-        <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Ananny Royzada" width="80">
-        </figure>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--one" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--two" aria-hidden="true"></div>
 
-        <div class="info-content">
-          <h1 class="name" title="Ananny Royzada">Ananny Royzada</h1>
-          <p class="title">Backend Software Engineer</p>
-        </div>
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">AR</span>
+        <span class="brand-text">
+          <span class="brand-name">Ananny Royzada</span>
+          <span class="brand-role">Backend Engineer</span>
+        </span>
+      </a>
 
-        <button class="info_more-btn" data-sidebar-btn>
-          <span>Show Contacts</span>
-          <ion-icon name="chevron-down"></ion-icon>
-        </button>
-
-      </div>
-
-      <div class="sidebar-info_more">
-
-        <div class="separator"></div>
-
-        <ul class="contacts-list">
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Email</p>
-              <a href="mailto:ananny1807@gmail.com" class="contact-link" style="color: var(--white-1); font-weight: 500;">ananny1807@gmail.com</a>
-            </div>
-          </li>
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="call-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Phone</p>
-              <a href="tel:+918655704599" class="contact-link" style="color: var(--white-1);">+91 8655704599</a>
-            </div>
-          </li>
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="briefcase-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Experience</p>
-              <span class="contact-link" style="color: #38bdf8; font-size: 13px;">TCS (July 2024 – Present)</span>
-            </div>
-          </li>
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="school-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Education</p>
-              <span class="contact-link" style="color: var(--white-2); font-size: 13px;">SRMIST (CGPA 8.64/10)</span>
-            </div>
-          </li>
-
-          <li class="contact-item">
-            <div class="icon-box">
-              <ion-icon name="location-outline"></ion-icon>
-            </div>
-            <div class="contact-info">
-              <p class="contact-title">Location</p>
-              <address>India</address>
-            </div>
-          </li>
-
-        </ul>
-
-        <div class="separator"></div>
-
-        <ul class="social-list">
-
-          <li class="social-item">
-            <a href="https://github.com/Anannyroyzada" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub: Anannyroyzada">
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://www.linkedin.com/in/anannyroyzada/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn: anannyroyzada">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="https://leetcode.com/u/ananny/" target="_blank" rel="noopener noreferrer" class="social-link" title="LeetCode: @ananny">
-              <ion-icon name="code-slash-outline"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
-            <a href="mailto:ananny1807@gmail.com" class="social-link" title="Send Email">
-              <ion-icon name="send-outline"></ion-icon>
-            </a>
-          </li>
-
-        </ul>
-
-      </div>
-
-    </aside>
-
-
-
-    <!--
-      - #MAIN CONTENT
-    -->
-    <div class="main-content">
-
-      <!--
-        - #NAVBAR
-      -->
-      <nav class="navbar">
-
-        <ul class="navbar-list">
-
-          <li class="navbar-item">
-            <button class="navbar-link active" data-nav-link>About</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Projects</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Resume</button>
-          </li>
-
-          <li class="navbar-item">
-            <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
-
-        </ul>
-
+      <nav class="nav" id="primary-nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
       </nav>
 
-
-
-      <!--
-        - #ABOUT
-      -->
-      <article class="about active" data-page="about">
-
-        <header>
-          <h2 class="h2 article-title">About Me</h2>
-        </header>
-
-        <section class="about-text">
-          <p>
-            I am a <strong>Backend Software Engineer</strong> at <strong>Tata Consultancy Services (TCS)</strong>, specializing in designing and developing scalable enterprise backend services using <strong>Java, Spring Boot, REST APIs, and SQL</strong>.
-          </p>
-
-          <p>
-            With a solid foundation in Computer Science and Business Systems from <strong>SRM Institute of Science and Technology (CGPA 8.64/10)</strong>, I focus on building high-performance architectures, transactional reliability, and distributed systems. Beyond enterprise microservices, I actively engineer high-throughput systems leveraging <strong>Java 21 Virtual Threads (Project Loom)</strong>, <strong>Redis atomic Lua scripting</strong>, <strong>PostgreSQL concurrency control</strong>, and <strong>Testcontainers chaos testing</strong>.
-          </p>
-        </section>
-
-
-        <!-- Problem Solving & LeetCode Milestone Banner -->
-        <section style="margin: 25px 0;">
-          <div class="achievement-card">
-            <div class="achievement-icon">
-              <ion-icon name="trophy-outline"></ion-icon>
-            </div>
-            <div style="flex-grow: 1;">
-              <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
-                <h4 class="achievement-title" style="margin-bottom: 0;">200+ Data Structures &amp; Algorithms Solved on LeetCode</h4>
-                <a href="https://leetcode.com/u/ananny/" target="_blank" rel="noopener noreferrer" class="btn-repo" style="font-size: 11px; padding: 4px 10px;">
-                  <ion-icon name="code-slash-outline"></ion-icon>
-                  <span>@ananny on LeetCode</span>
-                </a>
-              </div>
-              <p class="achievement-text" style="margin-top: 8px;">
-                Practicing algorithmic problem solving in Java across Arrays, Strings, Hashing, Linked Lists, Stacks, Queues, Binary Search, Trees, Graphs, Heaps, and Dynamic Programming with an emphasis on optimal time &amp; space complexity.
-              </p>
-            </div>
-          </div>
-        </section>
-
-
-        <!--
-          - What I'm Doing
-        -->
-        <section class="service">
-
-          <h3 class="h3 service-title">Core Competencies &amp; Specialties</h3>
-
-          <ul class="service-list">
-
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Backend Microservices" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Enterprise Backend Development</h4>
-                <p class="service-item-text">
-                  Engineering robust Spring Boot microservices, designing layered Controller-Service-Repository architectures, RESTful APIs, JSON serialization, validation, and Hibernate / Spring Data JPA persistence.
-                </p>
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="Distributed Rate Limiting" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Distributed Systems &amp; Concurrency</h4>
-                <p class="service-item-text">
-                  Designing zero-contention rate limiters using Redis Lettuce &amp; atomic Lua scripts, and high-concurrency worker brokers with PostgreSQL <code>SELECT ... FOR UPDATE SKIP LOCKED</code> and Java 21 Virtual Threads.
-                </p>
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg" alt="Database & SQL" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Database Engineering &amp; Query Optimization</h4>
-                <p class="service-item-text">
-                  Designing normalized relational schemas in PostgreSQL &amp; MySQL. Writing and optimizing complex SQL queries, handling transaction boundaries, indexing, and Flyway schema migrations.
-                </p>
-              </div>
-            </li>
-
-            <li class="service-item">
-              <div class="service-icon-box">
-                <img src="./assets/images/icon-photo.svg" alt="Cloud Hosting" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Unified Cloud &amp; Containerization</h4>
-                <p class="service-item-text">
-                  Modern deployment topology pairing Cloudflare Pages (Edge CDN for React &amp; portfolio) with containerized Spring Boot, PostgreSQL, and Redis instances on Render with Docker Compose.
-                </p>
-              </div>
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - Cloud Infrastructure Topology Banner
-        -->
-        <section class="cloud-infra-banner">
-          <div class="cloud-infra-header">
-            <span class="cloud-infra-title">
-              <ion-icon name="server-outline"></ion-icon> Production Cloud Hosting Topology
-            </span>
-            <span class="project-tag tag-blue">Cloudflare Pages + Render</span>
-          </div>
-          <p style="color: var(--light-gray); font-size: 14px; line-height: 1.6;">
-            Global edge CDN hosting on <strong>Cloudflare Pages</strong> for static portfolio &amp; React frontends, coupled with containerized Spring Boot APIs, managed PostgreSQL, and Redis clusters on <strong>Render</strong>.
-          </p>
-          <div class="cloud-badges-list">
-            <span class="cloud-badge-item"><ion-icon name="globe-outline"></ion-icon> Cloudflare Edge CDN</span>
-            <span class="cloud-badge-item"><ion-icon name="logo-docker"></ion-icon> Render Containerized APIs</span>
-            <span class="cloud-badge-item"><ion-icon name="git-branch-outline"></ion-icon> GitHub Actions CI/CD</span>
-            <span class="cloud-badge-item"><ion-icon name="shield-checkmark-outline"></ion-icon> Automated SSL &amp; CORS</span>
-          </div>
-        </section>
-
-      </article>
-
-
-
-      <!--
-        - #PORTFOLIO / PROJECTS
-      -->
-      <article class="portfolio" data-page="projects">
-
-        <header>
-          <h2 class="h2 article-title">Featured Projects</h2>
-        </header>
-
-        <section class="projects">
-
-          <ul class="filter-list">
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>Distributed Systems</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>Full-Stack &amp; Enterprise</button>
-            </li>
-            <li class="filter-item">
-              <button data-filter-btn>Cloud &amp; Benchmarks</button>
-            </li>
-          </ul>
-
-          <div class="filter-select-box">
-            <button class="filter-select" data-select>
-              <div class="select-value" data-selecct-value>Select category</div>
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-            </button>
-
-            <ul class="select-list">
-              <li class="select-item"><button data-select-item>All</button></li>
-              <li class="select-item"><button data-select-item>Distributed Systems</button></li>
-              <li class="select-item"><button data-select-item>Full-Stack &amp; Enterprise</button></li>
-              <li class="select-item"><button data-select-item>Cloud &amp; Benchmarks</button></li>
-            </ul>
-          </div>
-
-          <ul class="project-list">
-
-            <!-- PROJECT 1: Rate Limiter & API Gateway -->
-            <li class="project-item active" data-filter-item data-category="distributed systems"
-                data-project-item
-                data-project-title="Distributed Rate Limiter &amp; API Gateway"
-                data-project-category="Distributed Systems &bull; Spring Boot 3"
-                data-project-img="./assets/images/project-ratelimiter.svg"
-                data-project-github="https://github.com/Anannyroyzada"
-                data-project-demo="#">
-              <div class="project-card">
-                <div>
-                  <figure class="project-img" style="cursor: pointer;">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-                    <img src="./assets/images/project-ratelimiter.svg" alt="Distributed Rate Limiter &amp; API Gateway" loading="lazy">
-                  </figure>
-
-                  <h3 class="project-title" style="margin-top: 10px;">
-                    Distributed Rate Limiter + API Gateway
-                    <span class="status-pill status-active">Core Architecture</span>
-                  </h3>
-
-                  <p class="project-category">Spring Cloud Gateway &bull; Redis &bull; Lua &bull; Resilience4j</p>
-
-                  <div class="project-tags">
-                    <span class="project-tag tag-blue">Spring Cloud Gateway</span>
-                    <span class="project-tag tag-amber">Redis Lua</span>
-                    <span class="project-tag tag-purple">Resilience4j</span>
-                    <span class="project-tag tag-green">Gatling p99</span>
-                  </div>
-
-                  <p class="project-desc-preview">
-                    High-throughput rate limiter with Token Bucket &amp; Sliding Window backed by Redis cluster via atomic Lua scripts. Built with Resilience4j circuit breakers and Prometheus metrics.
-                  </p>
-                </div>
-
-                <!-- Direct Action Buttons visible on the card -->
-                <div class="project-card-actions">
-                  <a href="https://github.com/Anannyroyzada" target="_blank" rel="noopener noreferrer" class="btn-repo">
-                    <ion-icon name="logo-github"></ion-icon>
-                    <span>View GitHub Repository</span>
-                  </a>
-                  <button type="button" class="btn-specs" data-open-modal>
-                    <ion-icon name="layers-outline"></ion-icon>
-                    <span>Architecture Specs</span>
-                  </button>
-                </div>
-
-                <!-- Hidden template content for modal -->
-                <div class="project-modal-source" style="display: none;">
-                  <div class="project-kpi-grid">
-                    <div class="kpi-card">
-                      <div class="kpi-label">Peak Throughput</div>
-                      <div class="kpi-value" style="color: #38bdf8;">45,000+ RPS</div>
-                    </div>
-                    <div class="kpi-card">
-                      <div class="kpi-label">p99 Latency</div>
-                      <div class="kpi-value" style="color: #34d399;">&lt; 1.8 ms</div>
-                    </div>
-                    <div class="kpi-card">
-                      <div class="kpi-label">Concurrency Model</div>
-                      <div class="kpi-value" style="color: #fbbf24;">Atomic Lua</div>
-                    </div>
-                    <div class="kpi-card">
-                      <div class="kpi-label">Observability</div>
-                      <div class="kpi-value" style="color: #c084fc;">Prometheus/Grafana</div>
-                    </div>
-                  </div>
-
-                  <h4 class="modal-section-title"><ion-icon name="hardware-chip-outline"></ion-icon> Architectural Highlights</h4>
-                  <ul class="modal-feature-list">
-                    <li class="modal-feature-item"><strong>Atomic Algorithm Execution:</strong> Token Bucket and Sliding Window Log algorithms written directly in Lua scripts executed atomically on Redis nodes via Lettuce client, eliminating distributed race conditions.</li>
-                    <li class="modal-feature-item"><strong>Resilience &amp; Outage Strategy:</strong> Circuit breaker via Resilience4j with configurable Fail-Open vs. Fail-Closed degradation policy during Redis partitions to prevent downstream cascading failures.</li>
-                    <li class="modal-feature-item"><strong>Low-Level Gateways:</strong> Extensible filter chain integrated with Spring Cloud Gateway (Netty-based reactive pipeline).</li>
-                    <li class="modal-feature-item"><strong>Stress Testing &amp; Metrics:</strong> Gatling Java DSL and k6 load testing scenarios publishing real-time p95/p99 latency histograms, throughput graphs, and rejection percentages to Grafana.</li>
-                    <li class="modal-feature-item"><strong>JMH Microbenchmarks:</strong> Microbenchmark suite testing local token evaluation hot path against concurrent contention.</li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-
-
-            <!-- PROJECT 2: Job Queue / Workflow Engine -->
-            <li class="project-item active" data-filter-item data-category="distributed systems"
-                data-project-item
-                data-project-title="Distributed Job Queue &amp; Workflow Engine"
-                data-project-category="High-Concurrency Backend &bull; Java 21"
-                data-project-img="./assets/images/project-jobqueue.svg"
-                data-project-github="https://github.com/Anannyroyzada"
-                data-project-demo="#">
-              <div class="project-card">
-                <div>
-                  <figure class="project-img" style="cursor: pointer;">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-                    <img src="./assets/images/project-jobqueue.svg" alt="Distributed Job Queue &amp; Workflow Engine" loading="lazy">
-                  </figure>
-
-                  <h3 class="project-title" style="margin-top: 10px;">
-                    Distributed Job Queue &amp; Workflow Engine
-                    <span class="status-pill status-benchmark">Java 21 Loom</span>
-                  </h3>
-
-                  <p class="project-category">PostgreSQL SKIP LOCKED &bull; Virtual Threads &bull; Flyway</p>
-
-                  <div class="project-tags">
-                    <span class="project-tag tag-green">Java 21 Virtual Threads</span>
-                    <span class="project-tag tag-blue">PostgreSQL Lock-Free</span>
-                    <span class="project-tag tag-amber">Flyway Schema</span>
-                    <span class="project-tag tag-purple">Testcontainers</span>
-                  </div>
-
-                  <p class="project-desc-preview">
-                    High-reliability distributed job broker using PostgreSQL <code>SELECT ... FOR UPDATE SKIP LOCKED</code>. Powered by Java 21 Virtual Threads, dead-letter queues, and graceful shutdown recovery.
-                  </p>
-                </div>
-
-                <!-- Direct Action Buttons visible on the card -->
-                <div class="project-card-actions">
-                  <a href="https://github.com/Anannyroyzada" target="_blank" rel="noopener noreferrer" class="btn-repo">
-                    <ion-icon name="logo-github"></ion-icon>
-                    <span>View GitHub Repository</span>
-                  </a>
-                  <button type="button" class="btn-specs" data-open-modal>
-                    <ion-icon name="layers-outline"></ion-icon>
-                    <span>Architecture Specs</span>
-                  </button>
-                </div>
-
-                <!-- Hidden template content for modal -->
-                <div class="project-modal-source" style="display: none;">
-                  <div class="project-kpi-grid">
-                    <div class="kpi-card">
-                      <div class="kpi-label">Worker Concurrency</div>
-                      <div class="kpi-value" style="color: #34d399;">10,000+ Tasks</div>
-                    </div>
-                    <div class="kpi-card">
-                      <div class="kpi-label">Lock Contention</div>
-                      <div class="kpi-value" style="color: #38bdf8;">0% (SKIP LOCKED)</div>
-                    </div>
-                    <div class="kpi-card">
-                      <div class="kpi-label">Reliability</div>
-                      <div class="kpi-value" style="color: #fb7185;">DLQ + Retries</div>
-                    </div>
-                    <div class="kpi-card">
-                      <div class="kpi-label">Integration Tests</div>
-                      <div class="kpi-value" style="color: #a855f7;">Testcontainers</div>
-                    </div>
-                  </div>
-
-                  <h4 class="modal-section-title"><ion-icon name="hardware-chip-outline"></ion-icon> Architectural Highlights</h4>
-                  <ul class="modal-feature-list">
-                    <li class="modal-feature-item"><strong>Lock-Free Queue Dequeue:</strong> Employs PostgreSQL <code>SELECT ... FOR UPDATE SKIP LOCKED</code> via Spring JDBC / jOOQ, enabling parallel workers to poll without deadlocks or row-level lock contention.</li>
-                    <li class="modal-feature-item"><strong>Java 21 Virtual Threads:</strong> Lightweight worker dispatching over virtual threads, scaling to thousands of concurrent jobs with minimal memory overhead and zero OS thread starvation.</li>
-                    <li class="modal-feature-item"><strong>Reliability Primitives:</strong> Exponential backoff retry policies, poison pill quarantine into Dead-Letter Queues (DLQ), visibility timeouts, and worker heartbeats with auto-reclaim on crashed nodes.</li>
-                    <li class="modal-feature-item"><strong>Testcontainers Integration Testing:</strong> Real PostgreSQL containers running in CI. Simulates mid-execution worker kill, network partition, and verifying idempotent reprocessing with zero message duplication.</li>
-                    <li class="modal-feature-item"><strong>Flyway Schema Evolution:</strong> Version-controlled database migrations ensuring seamless CI/CD rollouts and rollback safety.</li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-
-
-            <!-- PROJECT 3: Personal Productivity Tracker (From Resume) -->
-            <li class="project-item active" data-filter-item data-category="full-stack &amp; enterprise"
-                data-project-item
-                data-project-title="Personal Productivity Tracker"
-                data-project-category="Full-Stack &bull; Java &bull; Spring Boot &bull; React"
-                data-project-img="./assets/images/project-productivity.svg"
-                data-project-github="https://github.com/Anannyroyzada"
-                data-project-demo="#">
-              <div class="project-card">
-                <div>
-                  <figure class="project-img" style="cursor: pointer;">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-                    <img src="./assets/images/project-productivity.svg" alt="Personal Productivity Tracker" loading="lazy">
-                  </figure>
-
-                  <h3 class="project-title" style="margin-top: 10px;">
-                    Personal Productivity Tracker
-                    <span class="status-pill status-cloud">Full-Stack App</span>
-                  </h3>
-
-                  <p class="project-category">Spring Boot &bull; React &bull; MySQL &bull; JWT Auth</p>
-
-                  <div class="project-tags">
-                    <span class="project-tag tag-blue">Spring Boot</span>
-                    <span class="project-tag tag-purple">React.js</span>
-                    <span class="project-tag tag-green">Spring Data JPA</span>
-                    <span class="project-tag tag-amber">JWT Security</span>
-                  </div>
-
-                  <p class="project-desc-preview">
-                    Full-stack task management application with REST APIs for task lifecycle, updates, status tracking, and user data isolation. Built with JWT authentication and layered 3-tier architecture.
-                  </p>
-                </div>
-
-                <!-- Direct Action Buttons visible on the card -->
-                <div class="project-card-actions">
-                  <a href="https://github.com/Anannyroyzada" target="_blank" rel="noopener noreferrer" class="btn-repo">
-                    <ion-icon name="logo-github"></ion-icon>
-                    <span>View GitHub Repository</span>
-                  </a>
-                  <button type="button" class="btn-specs" data-open-modal>
-                    <ion-icon name="layers-outline"></ion-icon>
-                    <span>Architecture Specs</span>
-                  </button>
-                </div>
-
-                <!-- Hidden template content for modal -->
-                <div class="project-modal-source" style="display: none;">
-                  <div class="project-kpi-grid">
-                    <div class="kpi-card">
-                      <div class="kpi-label">Security</div>
-                      <div class="kpi-value" style="color: #38bdf8;">JWT Auth</div>
-                    </div>
-                    <div class="kpi-card">
-                      <div class="kpi-label">Architecture</div>
-                      <div class="kpi-value" style="color: #34d399;">3-Tier Layered</div>
-                    </div>
-                    <div class="kpi-card">
-                      <div class="kpi-label">Persistence</div>
-                      <div class="kpi-value" style="color: #fbbf24;">Hibernate / JPA</div>
-                    </div>
-                    <div class="kpi-card">
-                      <div class="kpi-label">Frontend</div>
-                      <div class="kpi-value" style="color: #c084fc;">React SPA</div>
-                    </div>
-                  </div>
-
-                  <h4 class="modal-section-title"><ion-icon name="hardware-chip-outline"></ion-icon> Architectural Highlights</h4>
-                  <ul class="modal-feature-list">
-                    <li class="modal-feature-item"><strong>Layered Enterprise Architecture:</strong> Structured with strict separation of concerns across Controller, Service, and Repository layers using Spring Data JPA and Hibernate.</li>
-                    <li class="modal-feature-item"><strong>Stateless Security:</strong> Implemented JSON Web Token (JWT) based authentication and authorization filters, protecting endpoints and isolating user-specific datasets.</li>
-                    <li class="modal-feature-item"><strong>React Integration:</strong> Connected responsive React components to backend REST endpoints with clean HTTP error handling and token refresh logic.</li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-
-
-            <!-- PROJECT 4: Flight Management System (From Resume) -->
-            <li class="project-item active" data-filter-item data-category="full-stack &amp; enterprise"
-                data-project-item
-                data-project-title="Flight Management System"
-                data-project-category="Enterprise Java &bull; Servlets &bull; JDBC"
-                data-project-img="./assets/images/project-flight.svg"
-                data-project-github="https://github.com/Anannyroyzada"
-                data-project-demo="#">
-              <div class="project-card">
-                <div>
-                  <figure class="project-img" style="cursor: pointer;">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-                    <img src="./assets/images/project-flight.svg" alt="Flight Management System" loading="lazy">
-                  </figure>
-
-                  <h3 class="project-title" style="margin-top: 10px;">
-                    Flight Management System
-                    <span class="status-pill status-active">Core Java &amp; JDBC</span>
-                  </h3>
-
-                  <p class="project-category">Java Servlets &bull; JDBC &bull; MySQL &bull; HTML/CSS/JS</p>
-
-                  <div class="project-tags">
-                    <span class="project-tag tag-purple">Java Servlets</span>
-                    <span class="project-tag tag-blue">Direct JDBC</span>
-                    <span class="project-tag tag-amber">MySQL Transactions</span>
-                    <span class="project-tag tag-green">Admin Operations</span>
-                  </div>
-
-                  <p class="project-desc-preview">
-                    Full-stack flight booking and management system supporting user registration, flight search, transactional seat bookings, and administrative operations using Java Servlets and JDBC.
-                  </p>
-                </div>
-
-                <!-- Direct Action Buttons visible on the card -->
-                <div class="project-card-actions">
-                  <a href="https://github.com/Anannyroyzada" target="_blank" rel="noopener noreferrer" class="btn-repo">
-                    <ion-icon name="logo-github"></ion-icon>
-                    <span>View GitHub Repository</span>
-                  </a>
-                  <button type="button" class="btn-specs" data-open-modal>
-                    <ion-icon name="layers-outline"></ion-icon>
-                    <span>Architecture Specs</span>
-                  </button>
-                </div>
-
-                <!-- Hidden template content for modal -->
-                <div class="project-modal-source" style="display: none;">
-                  <div class="project-kpi-grid">
-                    <div class="kpi-card">
-                      <div class="kpi-label">Database</div>
-                      <div class="kpi-value" style="color: #38bdf8;">MySQL ACID</div>
-                    </div>
-                    <div class="kpi-card">
-                      <div class="kpi-label">Backend</div>
-                      <div class="kpi-value" style="color: #34d399;">Java Servlets</div>
-                    </div>
-                    <div class="kpi-card">
-                      <div class="kpi-label">Data Access</div>
-                      <div class="kpi-value" style="color: #fbbf24;">JDBC Direct</div>
-                    </div>
-                    <div class="kpi-card">
-                      <div class="kpi-label">Features</div>
-                      <div class="kpi-value" style="color: #c084fc;">Booking Engine</div>
-                    </div>
-                  </div>
-
-                  <h4 class="modal-section-title"><ion-icon name="hardware-chip-outline"></ion-icon> Architectural Highlights</h4>
-                  <ul class="modal-feature-list">
-                    <li class="modal-feature-item"><strong>Direct JDBC Performance:</strong> Low-level SQL operations for users, flights, and booking records with prepared statements preventing SQL injection.</li>
-                    <li class="modal-feature-item"><strong>Transactional Booking:</strong> Ensured seat availability integrity through ACID database transactions and rollback triggers during flight checkout workflows.</li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-
-
-            <!-- PROJECT 5: Employee Management System (From Resume) -->
-            <li class="project-item active" data-filter-item data-category="full-stack &amp; enterprise"
-                data-project-item
-                data-project-title="Employee Management System"
-                data-project-category="Backend REST APIs &bull; Spring Boot"
-                data-project-img="./assets/images/project-employee.svg"
-                data-project-github="https://github.com/Anannyroyzada"
-                data-project-demo="#">
-              <div class="project-card">
-                <div>
-                  <figure class="project-img" style="cursor: pointer;">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-                    <img src="./assets/images/project-employee.svg" alt="Employee Management System" loading="lazy">
-                  </figure>
-
-                  <h3 class="project-title" style="margin-top: 10px;">
-                    Employee Management System
-                    <span class="status-pill status-benchmark">RESTful APIs</span>
-                  </h3>
-
-                  <p class="project-category">Spring Boot &bull; Spring Data JPA &bull; Hibernate &bull; MySQL</p>
-
-                  <div class="project-tags">
-                    <span class="project-tag tag-green">Spring Boot 3</span>
-                    <span class="project-tag tag-blue">Spring Data JPA</span>
-                    <span class="project-tag tag-purple">Hibernate ORM</span>
-                    <span class="project-tag tag-amber">REST CRUD</span>
-                  </div>
-
-                  <p class="project-desc-preview">
-                    Production-ready RESTful CRUD APIs with a layered Controller–Service–Repository architecture, entity relationship mapping, validation, and relational database persistence.
-                  </p>
-                </div>
-
-                <!-- Direct Action Buttons visible on the card -->
-                <div class="project-card-actions">
-                  <a href="https://github.com/Anannyroyzada" target="_blank" rel="noopener noreferrer" class="btn-repo">
-                    <ion-icon name="logo-github"></ion-icon>
-                    <span>View GitHub Repository</span>
-                  </a>
-                  <button type="button" class="btn-specs" data-open-modal>
-                    <ion-icon name="layers-outline"></ion-icon>
-                    <span>Architecture Specs</span>
-                  </button>
-                </div>
-
-                <!-- Hidden template content for modal -->
-                <div class="project-modal-source" style="display: none;">
-                  <div class="project-kpi-grid">
-                    <div class="kpi-card">
-                      <div class="kpi-label">API Design</div>
-                      <div class="kpi-value" style="color: #38bdf8;">RESTful CRUD</div>
-                    </div>
-                    <div class="kpi-card">
-                      <div class="kpi-label">Architecture</div>
-                      <div class="kpi-value" style="color: #34d399;">Layered 3-Tier</div>
-                    </div>
-                    <div class="kpi-card">
-                      <div class="kpi-label">ORM</div>
-                      <div class="kpi-value" style="color: #fbbf24;">Hibernate</div>
-                    </div>
-                    <div class="kpi-card">
-                      <div class="kpi-label">Validation</div>
-                      <div class="kpi-value" style="color: #c084fc;">Bean Validation</div>
-                    </div>
-                  </div>
-
-                  <h4 class="modal-section-title"><ion-icon name="hardware-chip-outline"></ion-icon> Architectural Highlights</h4>
-                  <ul class="modal-feature-list">
-                    <li class="modal-feature-item"><strong>Clean RESTful CRUD:</strong> Standardized HTTP status codes (200, 201, 204, 404, 500) and global exception handlers with <code>@ControllerAdvice</code>.</li>
-                    <li class="modal-feature-item"><strong>Entity Mapping:</strong> Designed relational mappings and constraints in MySQL with Spring Data JPA repository methods.</li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-
-
-            <!-- PROJECT 6: Full-Stack Cloud Topology -->
-            <li class="project-item active" data-filter-item data-category="cloud &amp; benchmarks"
-                data-project-item
-                data-project-title="Full-Stack Cloud Infrastructure: React + Spring Boot"
-                data-project-category="Cloud Deployments &bull; Docker"
-                data-project-img="./assets/images/project-fullstack.svg"
-                data-project-github="https://github.com/Anannyroyzada"
-                data-project-demo="#">
-              <div class="project-card">
-                <div>
-                  <figure class="project-img" style="cursor: pointer;">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-                    <img src="./assets/images/project-fullstack.svg" alt="React and Spring Boot Hosting" loading="lazy">
-                  </figure>
-
-                  <h3 class="project-title" style="margin-top: 10px;">
-                    Full-Stack Cloud Topology
-                    <span class="status-pill status-cloud">Cloudflare + Render</span>
-                  </h3>
-
-                  <p class="project-category">React &bull; Spring Boot &bull; Docker &bull; Cloudflare Pages</p>
-
-                  <div class="project-tags">
-                    <span class="project-tag tag-amber">Cloudflare Pages</span>
-                    <span class="project-tag tag-green">Render Docker</span>
-                    <span class="project-tag tag-blue">Postgres &amp; Redis</span>
-                    <span class="project-tag tag-purple">GitHub Actions</span>
-                  </div>
-
-                  <p class="project-desc-preview">
-                    Production hosting blueprint. React SPAs and portfolio deployed on Cloudflare Pages global edge; Spring Boot REST APIs and DB containers deployed on Render with Docker.
-                  </p>
-                </div>
-
-                <!-- Direct Action Buttons visible on the card -->
-                <div class="project-card-actions">
-                  <a href="https://github.com/Anannyroyzada" target="_blank" rel="noopener noreferrer" class="btn-repo">
-                    <ion-icon name="logo-github"></ion-icon>
-                    <span>View GitHub Repository</span>
-                  </a>
-                  <button type="button" class="btn-specs" data-open-modal>
-                    <ion-icon name="layers-outline"></ion-icon>
-                    <span>Architecture Specs</span>
-                  </button>
-                </div>
-
-                <!-- Hidden template content for modal -->
-                <div class="project-modal-source" style="display: none;">
-                  <div class="project-kpi-grid">
-                    <div class="kpi-card">
-                      <div class="kpi-label">Edge TTFB</div>
-                      <div class="kpi-value" style="color: #38bdf8;">&lt; 50 ms</div>
-                    </div>
-                    <div class="kpi-card">
-                      <div class="kpi-label">Backend Deployment</div>
-                      <div class="kpi-value" style="color: #34d399;">Render Container</div>
-                    </div>
-                    <div class="kpi-card">
-                      <div class="kpi-label">SSL &amp; CDN</div>
-                      <div class="kpi-value" style="color: #f97316;">Cloudflare Edge</div>
-                    </div>
-                    <div class="kpi-card">
-                      <div class="kpi-label">Local Dev</div>
-                      <div class="kpi-value" style="color: #c084fc;">Docker Compose</div>
-                    </div>
-                  </div>
-
-                  <h4 class="modal-section-title"><ion-icon name="hardware-chip-outline"></ion-icon> Architectural Highlights</h4>
-                  <ul class="modal-feature-list">
-                    <li class="modal-feature-item"><strong>Decoupled Edge Frontend:</strong> Static portfolio and React applications built with Vite and distributed globally through Cloudflare Pages CDN for instant caching and zero server costs.</li>
-                    <li class="modal-feature-item"><strong>Containerized Spring Boot API:</strong> Docker multi-stage builds deployed on Render with automated zero-downtime health probes and HikariCP connection pooling.</li>
-                    <li class="modal-feature-item"><strong>Single-Command Local Environment:</strong> Complete <code>docker-compose.yml</code> provisioning API Gateway, Worker Engine, Postgres, Redis, Prometheus, and Grafana locally in one command.</li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-
-
-            <!-- PROJECT 7: JMH Benchmarking & Concurrency Lab -->
-            <li class="project-item active" data-filter-item data-category="cloud &amp; benchmarks"
-                data-project-item
-                data-project-title="High-Concurrency JMH Benchmarking Suite"
-                data-project-category="Performance Benchmarking &bull; Loom"
-                data-project-img="./assets/images/project-benchmarks.svg"
-                data-project-github="https://github.com/Anannyroyzada"
-                data-project-demo="#">
-              <div class="project-card">
-                <div>
-                  <figure class="project-img" style="cursor: pointer;">
-                    <div class="project-item-icon-box">
-                      <ion-icon name="eye-outline"></ion-icon>
-                    </div>
-                    <img src="./assets/images/project-benchmarks.svg" alt="JMH Benchmarking Lab" loading="lazy">
-                  </figure>
-
-                  <h3 class="project-title" style="margin-top: 10px;">
-                    JMH Microbenchmark &amp; Loom Lab
-                    <span class="status-pill status-benchmark">+1,400% Throughput</span>
-                  </h3>
-
-                  <p class="project-category">Java Microbenchmark Harness &bull; Project Loom &bull; k6</p>
-
-                  <div class="project-tags">
-                    <span class="project-tag tag-purple">OpenJDK JMH</span>
-                    <span class="project-tag tag-green">Virtual vs Fixed Pool</span>
-                    <span class="project-tag tag-blue">k6 &amp; Gatling</span>
-                    <span class="project-tag tag-amber">Sub-millisecond</span>
-                  </div>
-
-                  <p class="project-desc-preview">
-                    Rigorous empirical benchmark comparing Java 21 Virtual Threads with fixed platform thread pools under 10k blocking calls, plus JMH hot-path rate limiter analysis.
-                  </p>
-                </div>
-
-                <!-- Direct Action Buttons visible on the card -->
-                <div class="project-card-actions">
-                  <a href="https://github.com/Anannyroyzada" target="_blank" rel="noopener noreferrer" class="btn-repo">
-                    <ion-icon name="logo-github"></ion-icon>
-                    <span>View GitHub Repository</span>
-                  </a>
-                  <button type="button" class="btn-specs" data-open-modal>
-                    <ion-icon name="layers-outline"></ion-icon>
-                    <span>Architecture Specs</span>
-                  </button>
-                </div>
-
-                <!-- Hidden template content for modal -->
-                <div class="project-modal-source" style="display: none;">
-                  <div class="project-kpi-grid">
-                    <div class="kpi-card">
-                      <div class="kpi-label">Throughput Gain</div>
-                      <div class="kpi-value" style="color: #34d399;">+1,400%</div>
-                    </div>
-                    <div class="kpi-card">
-                      <div class="kpi-label">Thread Memory</div>
-                      <div class="kpi-value" style="color: #38bdf8;">~few hundred B</div>
-                    </div>
-                    <div class="kpi-card">
-                      <div class="kpi-label">Harness</div>
-                      <div class="kpi-value" style="color: #c084fc;">OpenJDK JMH</div>
-                    </div>
-                    <div class="kpi-card">
-                      <div class="kpi-label">Verification</div>
-                      <div class="kpi-value" style="color: #fbbf24;">Gatling / k6</div>
-                    </div>
-                  </div>
-
-                  <h4 class="modal-section-title"><ion-icon name="hardware-chip-outline"></ion-icon> Architectural Highlights</h4>
-                  <ul class="modal-feature-list">
-                    <li class="modal-feature-item"><strong>Virtual Threads vs. Fixed Thread Pool:</strong> Measured response degradation under 10,000 concurrent simulated blocking calls. Virtual threads maintained 48,500 req/sec while platform thread pools bottlenecked at 3,200 req/sec due to OS context switching.</li>
-                    <li class="modal-feature-item"><strong>JMH Hot-Path Optimization:</strong> Profiling the Token Bucket evaluation method for nanosecond latency and zero allocation on the critical request path.</li>
-                    <li class="modal-feature-item"><strong>Reproducible Test Harness:</strong> Packaged as runnable Gradle tasks and Docker containers with automated Markdown output generation.</li>
-                  </ul>
-                </div>
-              </div>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </article>
-
-
-
-      <!--
-        - #RESUME
-      -->
-      <article class="resume" data-page="resume">
-
-        <header>
-          <h2 class="h2 article-title">Resume &amp; Experience</h2>
-        </header>
-
-        <!-- Professional Experience -->
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="briefcase-outline"></ion-icon>
-            </div>
-            <h3 class="h3">Professional Experience</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-              <span class="exp-badge">Current Role</span>
-              <h4 class="h4 timeline-item-title">Tata Consultancy Services (TCS)</h4>
-              <span style="color: var(--orange-yellow-crayola); font-weight: 500;">Assistant System Engineer – Software Development &bull; July 2024 – Present</span>
-              <ul style="list-style: none; padding: 0; margin-top: 10px;">
-                <li class="modal-feature-item">Developed and maintained backend application components using <strong>Java, Spring Boot, REST APIs, and SQL</strong> for enterprise applications.</li>
-                <li class="modal-feature-item">Built and integrated RESTful services with JSON request/response handling, input validation, database operations, and reusable application components.</li>
-                <li class="modal-feature-item">Wrote and optimized SQL queries for data retrieval, application workflows, reporting requirements, and production issue analysis.</li>
-                <li class="modal-feature-item">Investigated application defects through debugging, log analysis, and root cause analysis while collaborating with cross-functional teams to deliver reliable software enhancements.</li>
-                <li class="modal-feature-item">Utilized Git, Jira, and Postman for version control, API testing, debugging, issue tracking, and agile development workflows.</li>
-              </ul>
-            </li>
-
-          </ol>
-
-        </section>
-
-
-        <!-- Education -->
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="school-outline"></ion-icon>
-            </div>
-            <h3 class="h3">Education</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">SRM Institute of Science and Technology</h4>
-              <span style="color: var(--orange-yellow-crayola); font-weight: 500;">B.Tech in Computer Science and Business Systems &bull; 2020 – 2024 &bull; Chennai, India</span>
-              <p class="timeline-text" style="margin-top: 6px;">
-                Graduated with <strong>CGPA: 8.64 / 10</strong>. Rigorous coursework in Data Structures &amp; Algorithms, Operating Systems, Database Management Systems (ACID, Concurrency Control, Indexing), OOP, and Computer Networks.
-              </p>
-            </li>
-
-          </ol>
-
-        </section>
-
-
-        <!-- Problem Solving & LeetCode -->
-        <section class="timeline">
-
-          <div class="title-wrapper">
-            <div class="icon-box">
-              <ion-icon name="trophy-outline"></ion-icon>
-            </div>
-            <h3 class="h3">Algorithmic Problem Solving &amp; Achievements</h3>
-          </div>
-
-          <ol class="timeline-list">
-
-            <li class="timeline-item">
-              <h4 class="h4 timeline-item-title">LeetCode Practice &bull; 200+ Problems Solved</h4>
-              <span style="color: #34d399; font-weight: 500;">Data Structures &amp; Algorithms in Java &bull; <a href="https://leetcode.com/u/ananny/" target="_blank" rel="noopener noreferrer" style="color: var(--orange-yellow-crayola); text-decoration: underline;">leetcode.com/u/ananny</a></span>
-              <p class="timeline-text" style="margin-top: 6px;">
-                Solved 200+ problems covering Arrays, Strings, Hashing, Linked Lists, Stacks, Queues, Binary Search, Trees, Graphs, Heaps, Greedy Algorithms, and Dynamic Programming. Regular focus on time and space complexity optimization and writing clean, efficient Java solutions.
-              </p>
-            </li>
-
-          </ol>
-
-        </section>
-
-
-        <!-- Technical Skills Matrix -->
-        <section class="skill" style="margin-top: 35px; margin-bottom: 25px;">
-
-          <h3 class="h3 skills-title" style="margin-bottom: 20px;">Technical Stack Matrix</h3>
-
-          <div class="skills-group">
-            <h4 class="skills-group-title"><ion-icon name="code-slash-outline"></ion-icon> Languages</h4>
-            <div class="skill-chips">
-              <span class="skill-chip">Java (Java 21, 17, 8)</span>
-              <span class="skill-chip">SQL</span>
-              <span class="skill-chip">JavaScript</span>
-              <span class="skill-chip">C / C++</span>
-              <span class="skill-chip">Python (Basics)</span>
-              <span class="skill-chip">Lua</span>
-            </div>
-          </div>
-
-          <div class="skills-group">
-            <h4 class="skills-group-title"><ion-icon name="layers-outline"></ion-icon> Backend &amp; Distributed Systems</h4>
-            <div class="skill-chips">
-              <span class="skill-chip">Spring Boot</span>
-              <span class="skill-chip">REST APIs</span>
-              <span class="skill-chip">Spring Data JPA</span>
-              <span class="skill-chip">Hibernate</span>
-              <span class="skill-chip">JDBC &amp; Servlets</span>
-              <span class="skill-chip">Spring Cloud Gateway</span>
-              <span class="skill-chip">Resilience4j</span>
-              <span class="skill-chip">Flyway Migrations</span>
-            </div>
-          </div>
-
-          <div class="skills-group">
-            <h4 class="skills-group-title"><ion-icon name="server-outline"></ion-icon> Frontend, Databases &amp; Caching</h4>
-            <div class="skill-chips">
-              <span class="skill-chip">React.js</span>
-              <span class="skill-chip">HTML5 &amp; CSS3</span>
-              <span class="skill-chip">MySQL</span>
-              <span class="skill-chip">PostgreSQL</span>
-              <span class="skill-chip">Redis &amp; Redis Streams</span>
-            </div>
-          </div>
-
-          <div class="skills-group">
-            <h4 class="skills-group-title"><ion-icon name="build-outline"></ion-icon> Tools, Concurrency &amp; Cloud</h4>
-            <div class="skill-chips">
-              <span class="skill-chip">Git &amp; GitHub</span>
-              <span class="skill-chip">Postman</span>
-              <span class="skill-chip">Jira</span>
-              <span class="skill-chip">Maven</span>
-              <span class="skill-chip">Virtual Threads (Loom)</span>
-              <span class="skill-chip">Testcontainers</span>
-              <span class="skill-chip">Docker</span>
-              <span class="skill-chip">Cloudflare Pages</span>
-              <span class="skill-chip">Render</span>
-            </div>
-          </div>
-
-          <div class="skills-group">
-            <h4 class="skills-group-title"><ion-icon name="hardware-chip-outline"></ion-icon> Computer Science Fundamentals</h4>
-            <div class="skill-chips">
-              <span class="skill-chip">Data Structures &amp; Algorithms</span>
-              <span class="skill-chip">Object-Oriented Programming (OOP)</span>
-              <span class="skill-chip">Database Management Systems (DBMS)</span>
-              <span class="skill-chip">Operating Systems</span>
-              <span class="skill-chip">Computer Networks</span>
-            </div>
-          </div>
-
-        </section>
-
-      </article>
-
-
-
-      <!--
-        - #CONTACT (REMOVED BROKEN MAPBOX / NO BLANK BOX)
-      -->
-      <article class="contact" data-page="contact">
-
-        <header>
-          <h2 class="h2 article-title">Contact</h2>
-        </header>
-
-        <!-- Direct Contact Info Cards (No mapbox, no empty boxes) -->
-        <section class="contact-info-grid">
-
-          <a href="mailto:ananny1807@gmail.com" class="contact-info-card">
-            <div class="contact-card-icon">
-              <ion-icon name="mail-outline"></ion-icon>
-            </div>
-            <div>
-              <p class="contact-card-title">Primary Email</p>
-              <p class="contact-card-value">ananny1807@gmail.com</p>
-            </div>
-          </a>
-
-          <a href="tel:+918655704599" class="contact-info-card">
-            <div class="contact-card-icon">
-              <ion-icon name="call-outline"></ion-icon>
-            </div>
-            <div>
-              <p class="contact-card-title">Phone / WhatsApp</p>
-              <p class="contact-card-value">+91 8655704599</p>
-            </div>
-          </a>
-
-          <a href="https://github.com/Anannyroyzada" target="_blank" rel="noopener noreferrer" class="contact-info-card">
-            <div class="contact-card-icon">
-              <ion-icon name="logo-github"></ion-icon>
-            </div>
-            <div>
-              <p class="contact-card-title">GitHub Profile</p>
-              <p class="contact-card-value">github.com/Anannyroyzada</p>
-            </div>
-          </a>
-
-          <a href="https://www.linkedin.com/in/anannyroyzada/" target="_blank" rel="noopener noreferrer" class="contact-info-card">
-            <div class="contact-card-icon">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </div>
-            <div>
-              <p class="contact-card-title">LinkedIn</p>
-              <p class="contact-card-value">in/anannyroyzada</p>
-            </div>
-          </a>
-
-          <a href="https://leetcode.com/u/ananny/" target="_blank" rel="noopener noreferrer" class="contact-info-card">
-            <div class="contact-card-icon">
-              <ion-icon name="code-slash-outline"></ion-icon>
-            </div>
-            <div>
-              <p class="contact-card-title">LeetCode Profile</p>
-              <p class="contact-card-value">leetcode.com/u/ananny</p>
-            </div>
-          </a>
-
-        </section>
-
-        <!-- Direct Message Form -->
-        <section class="contact-form">
-
-          <h3 class="h3 form-title">Send a Direct Message</h3>
-
-          <form action="mailto:ananny1807@gmail.com" method="POST" enctype="text/plain" class="form" data-form>
-
-            <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Your Full Name" required data-form-input>
-              <input type="email" name="email" class="form-input" placeholder="Your Email Address" required data-form-input>
-            </div>
-
-            <textarea name="message" class="form-input" placeholder="Your Message or Project Inquiry..." required data-form-input></textarea>
-
-            <button class="form-btn" type="submit" disabled data-form-btn>
-              <ion-icon name="paper-plane"></ion-icon>
-              <span>Send Message</span>
-            </button>
-
-          </form>
-
-        </section>
-
-      </article>
-
+      <div class="header-actions">
+        <button class="icon-btn theme-toggle" type="button" data-theme-toggle aria-label="Switch to light theme">
+          <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun"></use></svg>
+          <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon"></use></svg>
+        </button>
+        <a class="btn btn-sm btn-primary header-resume" href="./Ananny-Royzada-Resume.pdf" download aria-label="Download résumé as PDF">
+          <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>
+          <span>Résumé</span>
+        </a>
+        <button class="icon-btn menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
+          <svg class="icon icon-menu" aria-hidden="true"><use href="#i-menu"></use></svg>
+          <svg class="icon icon-close" aria-hidden="true"><use href="#i-x"></use></svg>
+        </button>
+      </div>
     </div>
+  </header>
 
-  </main>
+  <main id="main">
 
+    <!-- ============ HERO ============ -->
+    <section class="hero container" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow eyebrow--live">
+          <span class="status-dot" aria-hidden="true"></span>
+          Open to backend &amp; distributed-systems roles
+        </p>
 
-  <!--
-    - #DEDICATED PROJECT ARCHITECTURE MODAL
-  -->
-  <div class="project-modal-container" id="project-modal-container">
-    <div class="overlay" data-overlay></div>
+        <h1 id="hero-title">
+          I build backend systems that
+          <span class="gradient-text">stay fast under load.</span>
+        </h1>
 
-    <div class="project-modal-content">
-      <button class="modal-close-btn" id="project-modal-close-btn" aria-label="Close modal">
-        <ion-icon name="close-outline"></ion-icon>
-      </button>
+        <p class="hero-lede">
+          Backend Software Engineer at <strong>Tata Consultancy Services</strong>, working in
+          <strong>Java and Spring Boot</strong>. I design high-throughput APIs, Redis-backed
+          rate limiters, and PostgreSQL job queues — then benchmark them, containerize them,
+          and make them observable.
+        </p>
 
-      <img src="" alt="" class="project-modal-img" id="project-modal-img">
-
-      <div class="modal-header-row">
-        <div>
-          <h3 class="modal-project-title" id="project-modal-title">Project Title</h3>
-          <p class="modal-project-category" id="project-modal-category">Category</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#projects">
+            Explore projects
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"></use></svg>
+          </a>
+          <a class="btn btn-ghost" href="./Ananny-Royzada-Resume.pdf" download>
+            <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>
+            Download résumé
+          </a>
         </div>
+
+        <div class="hero-social" aria-label="Contact and social links">
+          <a href="https://github.com/Anannyroyzada" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/anannyroyzada/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg class="icon" aria-hidden="true"><use href="#i-linkedin"></use></svg>
+          </a>
+          <a href="https://leetcode.com/u/ananny/" target="_blank" rel="noopener noreferrer" aria-label="LeetCode">
+            <svg class="icon" aria-hidden="true"><use href="#i-code"></use></svg>
+          </a>
+          <a href="mailto:ananny1807@gmail.com" aria-label="Email">
+            <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
+          </a>
+          <button class="copy-email" type="button" data-copy-email aria-label="Copy email ananny1807@gmail.com">
+            <span>ananny1807@gmail.com</span>
+            <svg class="icon" aria-hidden="true"><use href="#i-link"></use></svg>
+          </button>
+        </div>
+
+        <ul class="hero-meta" aria-label="Quick facts">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg> India · remote / hybrid</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-briefcase"></use></svg> 1.5+ years at TCS</li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-cap"></use></svg> B.Tech CS · 8.64 CGPA</li>
+        </ul>
       </div>
 
-      <div id="project-modal-body">
-        <!-- Injected dynamically via script.js -->
-      </div>
+      <div class="hero-visual">
+        <div class="terminal" role="img" aria-label="Java code sample showing an atomic Redis token-bucket rate limiter">
+          <div class="terminal-bar">
+            <span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="terminal-file">RateLimiter.java</span>
+            <span class="terminal-badge">Java 21</span>
+          </div>
+          <pre class="terminal-body"><code><span class="ln"><span class="c">// Edge rate limiting · Spring Cloud Gateway</span></span><span class="ln"><span class="k">@Bean</span></span><span class="ln"><span class="t">RateLimiter</span> <span class="m">limiter</span>(<span class="t">RedisConnectionFactory</span> redis) {</span><span class="ln">  <span class="k">return</span> (key, limit) -&gt; redis.<span class="m">execute</span>(</span><span class="ln">    <span class="v">TOKEN_BUCKET_LUA</span>,        <span class="c">// atomic in Redis</span></span><span class="ln">    <span class="t">List</span>.<span class="m">of</span>(key),</span><span class="ln">    <span class="t">String</span>.<span class="m">valueOf</span>(limit),</span><span class="ln">    <span class="t">String</span>.<span class="m">valueOf</span>(clock.<span class="m">millis</span>())</span><span class="ln">  );</span><span class="ln">}</span><span class="ln"></span><span class="ln"><span class="c">// 45K RPS · p99 &lt; 1.8 ms · fail-open on partition</span></span></code></pre>
+        </div>
 
-      <div class="project-modal-actions">
-        <a href="https://github.com/Anannyroyzada" target="_blank" rel="noopener noreferrer" class="modal-btn-repo" id="project-modal-github">
-          <ion-icon name="logo-github"></ion-icon>
-          <span>View GitHub Repository</span>
-        </a>
-        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-specs" id="project-modal-demo">
-          <ion-icon name="globe-outline"></ion-icon>
-          <span>Live Deployment / Docs</span>
-        </a>
-      </div>
-    </div>
-  </div>
-
-
-  <!--
-    - #ORIGINAL TESTIMONIALS MODAL CONTAINER (PRESERVED)
-  -->
-  <div class="modal-container" data-modal-container>
-    <div class="overlay" data-overlay></div>
-
-    <section class="testimonials-modal">
-      <button class="modal-close-btn" data-modal-close-btn>
-        <ion-icon name="close-outline"></ion-icon>
-      </button>
-
-      <div class="modal-img-wrapper">
-        <figure class="modal-avatar-box">
-          <img src="./assets/images/avatar-1.png" alt="Avatar" width="80" data-modal-img>
-        </figure>
-        <img src="./assets/images/icon-quote.svg" alt="quote icon">
-      </div>
-
-      <div class="modal-content">
-        <h4 class="h3 modal-title" data-modal-title>Review</h4>
-        <time datetime="2026-06-14">June 2026</time>
-        <div data-modal-text>
-          <p></p>
+        <div class="floating-card floating-card--top" aria-hidden="true">
+          <span class="floating-icon"><svg class="icon"><use href="#i-gauge"></use></svg></span>
+          <span><strong>p99 &lt; 1.8 ms</strong><small>Redis Lua hot path</small></span>
+        </div>
+        <div class="floating-card floating-card--bottom" aria-hidden="true">
+          <span class="floating-icon floating-icon--amber"><svg class="icon"><use href="#i-activity"></use></svg></span>
+          <span><strong>45K+ RPS</strong><small>Gatling benchmark</small></span>
         </div>
       </div>
     </section>
-  </div>
 
+    <!-- ============ PROOF METRICS ============ -->
+    <section class="metrics container" aria-label="Key results">
+      <div class="metric">
+        <span class="metric-value" data-counter data-to="45000" data-suffix="+">45,000+</span>
+        <span class="metric-label">Peak RPS benchmarked</span>
+      </div>
+      <div class="metric">
+        <span class="metric-value" data-counter data-to="1.8" data-decimals="1" data-prefix="&lt; " data-suffix=" ms">&lt; 1.8 ms</span>
+        <span class="metric-label">p99 gateway latency</span>
+      </div>
+      <div class="metric">
+        <span class="metric-value" data-counter data-to="10000" data-suffix="+">10,000+</span>
+        <span class="metric-label">Concurrent jobs handled</span>
+      </div>
+      <div class="metric">
+        <span class="metric-value" data-counter data-to="200" data-suffix="+">200+</span>
+        <span class="metric-label">DSA problems solved</span>
+      </div>
+      <div class="metric">
+        <span class="metric-value" data-counter data-to="8.64" data-decimals="2">8.64</span>
+        <span class="metric-label">CGPA at SRMIST</span>
+      </div>
+    </section>
 
-  <!--
-    - Custom JS Link
-  -->
+    <!-- ============ ABOUT ============ -->
+    <section class="section container" id="about" data-section aria-labelledby="about-title">
+      <header class="section-head reveal">
+        <p class="eyebrow">01 — About</p>
+        <h2 id="about-title">Backend depth, not just CRUD.</h2>
+        <p>
+          I care about the parts of backend engineering that only show up under load:
+          concurrency, failure modes, and the difference between a demo and something
+          you can operate at 3 a.m.
+        </p>
+      </header>
+
+      <div class="about-grid">
+        <article class="card about-card reveal">
+          <div class="about-intro">
+            <img src="./assets/images/my-avatar.png" alt="Illustrated portrait of Ananny Royzada" width="72" height="72" loading="lazy" decoding="async">
+            <div>
+              <strong>Ananny Royzada</strong>
+              <span>Backend Engineer · TCS</span>
+            </div>
+          </div>
+          <p>
+            I'm a backend engineer at <strong>Tata Consultancy Services</strong>, where I build
+            and maintain <strong>Java and Spring Boot</strong> services for enterprise workflows.
+            My day-to-day is REST contract design, SQL and JPA persistence, production debugging,
+            and shipping changes with cross-functional QA and business teams.
+          </p>
+          <p>
+            Outside of work I go deeper than the average tutorial: <strong>atomic Redis Lua
+            scripts</strong>, <strong>PostgreSQL <code>SKIP LOCKED</code> queues</strong>,
+            <strong>Java 21 virtual threads</strong>, and benchmark harnesses that prove a design
+            actually holds. I containerize the stack, test failure paths with Testcontainers,
+            and document the trade-offs instead of hiding them.
+          </p>
+          <p>
+            I'm now looking for a backend or distributed-systems role where I can own services
+            end-to-end — from schema and API design to latency budgets and on-call.
+          </p>
+
+          <blockquote class="about-quote">
+            “I optimize for p99, not averages — and I write down the trade-offs before shipping.”
+          </blockquote>
+        </article>
+
+        <article class="card principles-card reveal" style="--delay: 80ms">
+          <h3 class="card-title">How I work</h3>
+          <ul class="principles">
+            <li>
+              <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-lock"></use></svg></span>
+              <div>
+                <h4>Correctness under concurrency</h4>
+                <p>Locks, idempotency, and atomic operations before clever code.</p>
+              </div>
+            </li>
+            <li>
+              <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-gauge"></use></svg></span>
+              <div>
+                <h4>Measure, then optimize</h4>
+                <p>JMH, Gatling, and k6. Benchmarks decide, not intuition.</p>
+              </div>
+            </li>
+            <li>
+              <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-shield"></use></svg></span>
+              <div>
+                <h4>Operable by default</h4>
+                <p>Health checks, metrics, migrations, and graceful shutdown.</p>
+              </div>
+            </li>
+            <li>
+              <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-message"></use></svg></span>
+              <div>
+                <h4>Clear communication</h4>
+                <p>Design docs, diagrams, and trade-offs teammates can act on.</p>
+              </div>
+            </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section container" id="experience" data-section aria-labelledby="experience-title">
+      <header class="section-head reveal">
+        <p class="eyebrow">02 — Experience</p>
+        <h2 id="experience-title">Enterprise delivery, engineering discipline.</h2>
+        <p>
+          Shipping and supporting Java services inside a large enterprise — with the code
+          review, debugging, and stakeholder communication that comes with it.
+        </p>
+      </header>
+
+      <div class="experience-grid">
+        <article class="card role-card reveal">
+          <div class="role-head">
+            <div>
+              <h3 class="role-company">Tata Consultancy Services</h3>
+              <p class="role-title">Assistant System Engineer · Software Development</p>
+            </div>
+            <span class="pill pill-blue">Current</span>
+          </div>
+          <p class="role-meta">
+            <svg class="icon" aria-hidden="true"><use href="#i-calendar"></use></svg>
+            July 2024 – Present
+            <span class="dot-sep" aria-hidden="true"></span>
+            <svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg>
+            India
+          </p>
+
+          <ul class="bullets">
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+              <span>Develop and maintain backend components using <strong>Java, Spring Boot, REST APIs, and SQL</strong> for enterprise applications.</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+              <span>Build and integrate RESTful services with JSON contracts, input validation, database operations, and reusable application components.</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+              <span>Write and optimize SQL for data retrieval, application workflows, reporting, and production issue analysis.</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+              <span>Diagnose defects through debugging, log analysis, and root-cause analysis; deliver fixes with cross-functional QA and business teams.</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+              <span>Work in Agile/Scrum using <strong>Git, Jira, and Postman</strong> for version control, API testing, issue tracking, and release workflows.</span>
+            </li>
+          </ul>
+
+          <div class="chips">
+            <span class="chip">Java</span>
+            <span class="chip">Spring Boot</span>
+            <span class="chip">REST</span>
+            <span class="chip">SQL</span>
+            <span class="chip">JPA / Hibernate</span>
+            <span class="chip">Git</span>
+            <span class="chip">Jira</span>
+            <span class="chip">Postman</span>
+            <span class="chip">Agile</span>
+          </div>
+        </article>
+
+        <div class="side-stack">
+          <article class="card reveal" style="--delay: 80ms">
+            <div class="side-head">
+              <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-cap"></use></svg></span>
+              <h3 class="card-title">Education</h3>
+            </div>
+            <h4 class="side-title">SRM Institute of Science and Technology</h4>
+            <p class="side-meta">B.Tech, Computer Science &amp; Business Systems · 2020 – 2024 · Chennai</p>
+            <p class="side-note">
+              Graduated with <strong>CGPA 8.64 / 10</strong>. Coursework in data structures,
+              DBMS (ACID, concurrency control, indexing), operating systems, OOP, and networks.
+            </p>
+            <div class="chips chips--sm">
+              <span class="chip">DSA</span>
+              <span class="chip">DBMS</span>
+              <span class="chip">OS</span>
+              <span class="chip">Networks</span>
+              <span class="chip">OOP</span>
+            </div>
+          </article>
+
+          <article class="card reveal" style="--delay: 140ms">
+            <div class="side-head">
+              <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-trophy"></use></svg></span>
+              <h3 class="card-title">Problem solving</h3>
+            </div>
+            <div class="mini-stats">
+              <div><strong>200+</strong><span>LeetCode problems</span></div>
+              <div><strong>7</strong><span>Engineered projects</span></div>
+            </div>
+            <p class="side-note">
+              Arrays, strings, hashing, linked lists, stacks, queues, binary search, trees,
+              graphs, heaps, greedy, and dynamic programming — in Java, with a focus on
+              time and space complexity.
+            </p>
+            <a class="text-link" href="https://leetcode.com/u/ananny/" target="_blank" rel="noopener noreferrer">
+              leetcode.com/u/ananny
+              <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section container" id="projects" data-section aria-labelledby="projects-title">
+      <header class="section-head reveal">
+        <p class="eyebrow">03 — Projects</p>
+        <h2 id="projects-title">Case studies, with numbers.</h2>
+        <p>
+          Seven systems built to answer a specific engineering question — how to rate-limit
+          at the edge, dequeue without lock contention, or prove a concurrency model actually
+          helps. Open a case study for the architecture, trade-offs, and benchmark methodology.
+        </p>
+      </header>
+
+      <div class="projects-toolbar reveal">
+        <div class="filters" role="group" aria-label="Filter projects">
+          <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+          <button class="filter-btn" type="button" data-filter="distributed" aria-pressed="false">Distributed systems</button>
+          <button class="filter-btn" type="button" data-filter="fullstack" aria-pressed="false">Full-stack</button>
+          <button class="filter-btn" type="button" data-filter="cloud" aria-pressed="false">Cloud &amp; benchmarks</button>
+        </div>
+        <p class="project-count" data-project-count aria-live="polite">7 projects</p>
+      </div>
+
+      <div class="project-grid" data-project-grid>
+
+        <!-- 1. RATE LIMITER -->
+        <article class="project-card project-card--featured reveal" data-project-card data-category="distributed"
+                 data-title="Distributed Rate Limiter + API Gateway"
+                 data-category-label="Distributed Systems · Spring Boot 3"
+                 data-github="https://github.com/Anannyroyzada">
+          <div class="project-media">
+            <img src="./assets/images/project-ratelimiter.svg" alt="Architecture diagram: client traffic flowing through a Spring Cloud Gateway to a Redis cluster running atomic Lua scripts" width="800" height="500" loading="lazy" decoding="async">
+          </div>
+          <div class="project-body">
+            <div class="project-title-row">
+              <h3 class="project-title">Distributed Rate Limiter + API Gateway</h3>
+              <span class="pill pill-teal">Core architecture</span>
+            </div>
+            <p class="project-desc">
+              Token-bucket and sliding-window rate limiting at the edge of a Spring Cloud Gateway,
+              with Redis Lua for atomic decisions and Resilience4j for predictable degradation.
+            </p>
+            <ul class="project-metrics" aria-label="Results">
+              <li><strong>45K+</strong><span>RPS</span></li>
+              <li><strong>&lt;1.8 ms</strong><span>p99</span></li>
+              <li><strong>Atomic</strong><span>Redis Lua</span></li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Spring Cloud Gateway</span>
+              <span class="tag">Redis + Lua</span>
+              <span class="tag">Resilience4j</span>
+              <span class="tag">Gatling</span>
+            </div>
+            <div class="project-actions">
+              <button class="btn btn-sm btn-ghost" type="button" data-open-project="ratelimiter">
+                Read case study
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg>
+              </button>
+              <a class="btn btn-sm btn-quiet" href="https://github.com/Anannyroyzada" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <template id="project-ratelimiter">
+            <div class="kpi-grid">
+              <div class="kpi"><span>Peak throughput</span><strong>45,000+ RPS</strong></div>
+              <div class="kpi"><span>p99 latency</span><strong>&lt; 1.8 ms</strong></div>
+              <div class="kpi"><span>Decision</span><strong>Atomic Lua</strong></div>
+              <div class="kpi"><span>Observability</span><strong>Prom + Grafana</strong></div>
+            </div>
+            <h3 class="dialog-subtitle">Architecture highlights</h3>
+            <ul class="detail-list">
+              <li><strong>Atomic algorithms.</strong> Token bucket and sliding-window log run as Lua scripts inside Redis, so every read-modify-write is a single atomic operation under concurrency.</li>
+              <li><strong>Explicit failure policy.</strong> Resilience4j circuit breakers support fail-open and fail-closed modes, so a Redis partition degrades predictably instead of cascading.</li>
+              <li><strong>Reactive gateway.</strong> A custom <code>GatewayFilterFactory</code> sits on Spring Cloud Gateway's Netty pipeline, with per-route and per-tenant limits.</li>
+              <li><strong>Proof, not vibes.</strong> Gatling and k6 scenarios report p50/p95/p99 latency and rejection rate; JMH isolates the local token-evaluation hot path.</li>
+            </ul>
+            <h3 class="dialog-subtitle">Engineering trade-offs</h3>
+            <ul class="detail-list detail-list--tradeoffs">
+              <li>Chose Redis over in-memory buckets so limits stay consistent across gateway replicas — and accepted a network hop with an explicit failure mode.</li>
+              <li>Sliding-window log is more precise but heavier on memory; token bucket is the default for high-volume routes.</li>
+            </ul>
+            <div class="dialog-stack">
+              <span>Stack</span>
+              <div class="chips chips--sm">
+                <span class="chip">Java 21</span><span class="chip">Spring Boot 3</span><span class="chip">Spring Cloud Gateway</span>
+                <span class="chip">Redis</span><span class="chip">Lua</span><span class="chip">Resilience4j</span>
+                <span class="chip">Gatling</span><span class="chip">JMH</span><span class="chip">Prometheus</span><span class="chip">Docker</span>
+              </div>
+            </div>
+          </template>
+        </article>
+
+        <!-- 2. JOB QUEUE -->
+        <article class="project-card reveal" data-project-card data-category="distributed"
+                 data-title="Distributed Job Queue &amp; Workflow Engine"
+                 data-category-label="High-Concurrency Backend · Java 21"
+                 data-github="https://github.com/Anannyroyzada">
+          <div class="project-media">
+            <img src="./assets/images/project-jobqueue.svg" alt="Architecture diagram: workers claiming jobs from PostgreSQL with SKIP LOCKED and dispatching them on Java 21 virtual threads" width="800" height="500" loading="lazy" decoding="async">
+          </div>
+          <div class="project-body">
+            <div class="project-title-row">
+              <h3 class="project-title">Distributed Job Queue &amp; Workflow Engine</h3>
+              <span class="pill pill-green">Java 21 Loom</span>
+            </div>
+            <p class="project-desc">
+              A Postgres-backed job broker where thousands of workers poll without fighting over
+              rows — built on <code>FOR UPDATE SKIP LOCKED</code>, virtual threads, and explicit
+              retry / dead-letter semantics.
+            </p>
+            <ul class="project-metrics" aria-label="Results">
+              <li><strong>10K+</strong><span>Concurrent jobs</span></li>
+              <li><strong>0%</strong><span>Dequeue contention</span></li>
+              <li><strong>DLQ</strong><span>+ backoff</span></li>
+            </ul>
+            <div class="tags">
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">SKIP LOCKED</span>
+              <span class="tag">Virtual threads</span>
+              <span class="tag">Testcontainers</span>
+            </div>
+            <div class="project-actions">
+              <button class="btn btn-sm btn-ghost" type="button" data-open-project="jobqueue">
+                Read case study
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg>
+              </button>
+              <a class="btn btn-sm btn-quiet" href="https://github.com/Anannyroyzada" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <template id="project-jobqueue">
+            <div class="kpi-grid">
+              <div class="kpi"><span>Worker concurrency</span><strong>10,000+ tasks</strong></div>
+              <div class="kpi"><span>Lock contention</span><strong>0% (SKIP LOCKED)</strong></div>
+              <div class="kpi"><span>Reliability</span><strong>DLQ + retries</strong></div>
+              <div class="kpi"><span>Integration tests</span><strong>Testcontainers</strong></div>
+            </div>
+            <h3 class="dialog-subtitle">Architecture highlights</h3>
+            <ul class="detail-list">
+              <li><strong>Lock-free dequeue.</strong> Workers claim batches with <code>SELECT … FOR UPDATE SKIP LOCKED</code>, so parallel consumers never block each other or double-process a job.</li>
+              <li><strong>Virtual-thread dispatch.</strong> Jobs run on <code>Executors.newVirtualThreadPerTaskExecutor()</code>, keeping thousands of blocking tasks cheap.</li>
+              <li><strong>Failure semantics.</strong> Visibility timeouts, worker heartbeats, exponential backoff, poison-pill quarantine to a DLQ, and idempotency keys for safe retries.</li>
+              <li><strong>Chaos-tested.</strong> Testcontainers kills workers mid-execution and partitions the database to verify recovery with zero message loss.</li>
+            </ul>
+            <h3 class="dialog-subtitle">Engineering trade-offs</h3>
+            <ul class="detail-list detail-list--tradeoffs">
+              <li>Postgres keeps operations simple and transactional; beyond ~100K jobs/sec I'd move to Kafka or SQS and keep Postgres for workflow state.</li>
+              <li>At-least-once delivery is the default, so handlers must be idempotent — enforced through idempotency keys.</li>
+            </ul>
+            <div class="dialog-stack">
+              <span>Stack</span>
+              <div class="chips chips--sm">
+                <span class="chip">Java 21</span><span class="chip">Spring Boot</span><span class="chip">PostgreSQL</span>
+                <span class="chip">jOOQ / JDBC</span><span class="chip">Flyway</span><span class="chip">Testcontainers</span><span class="chip">Docker</span>
+              </div>
+            </div>
+          </template>
+        </article>
+
+        <!-- 3. PRODUCTIVITY TRACKER -->
+        <article class="project-card reveal" data-project-card data-category="fullstack"
+                 data-title="Personal Productivity Tracker"
+                 data-category-label="Full-Stack · Spring Boot + React"
+                 data-github="https://github.com/Anannyroyzada/learning-spring-and-react">
+          <div class="project-media">
+            <img src="./assets/images/project-productivity.svg" alt="Diagram of a React frontend calling a Spring Boot REST API backed by MySQL with JWT authentication" width="800" height="500" loading="lazy" decoding="async">
+          </div>
+          <div class="project-body">
+            <div class="project-title-row">
+              <h3 class="project-title">Personal Productivity Tracker</h3>
+              <span class="pill pill-blue">JWT auth</span>
+            </div>
+            <p class="project-desc">
+              A full-stack task manager with stateless JWT auth, a strict Controller–Service–Repository
+              split, and a React SPA that handles token expiry cleanly.
+            </p>
+            <ul class="project-metrics" aria-label="Results">
+              <li><strong>3-tier</strong><span>Architecture</span></li>
+              <li><strong>JWT</strong><span>Stateless auth</span></li>
+              <li><strong>React</strong><span>SPA client</span></li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Spring Boot</span>
+              <span class="tag">Spring Data JPA</span>
+              <span class="tag">React</span>
+              <span class="tag">MySQL</span>
+            </div>
+            <div class="project-actions">
+              <button class="btn btn-sm btn-ghost" type="button" data-open-project="productivity">
+                Read case study
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg>
+              </button>
+              <a class="btn btn-sm btn-quiet" href="https://github.com/Anannyroyzada/learning-spring-and-react" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <template id="project-productivity">
+            <div class="kpi-grid">
+              <div class="kpi"><span>Security</span><strong>JWT auth</strong></div>
+              <div class="kpi"><span>Architecture</span><strong>3-tier layered</strong></div>
+              <div class="kpi"><span>Persistence</span><strong>Hibernate / JPA</strong></div>
+              <div class="kpi"><span>Frontend</span><strong>React SPA</strong></div>
+            </div>
+            <h3 class="dialog-subtitle">Architecture highlights</h3>
+            <ul class="detail-list">
+              <li><strong>Layered backend.</strong> Controllers own HTTP concerns, services own business rules, and repositories own persistence — entities never leak into the API.</li>
+              <li><strong>Stateless security.</strong> A JWT filter chain isolates each user's data; expired tokens return clean 401s and trigger re-authentication in the client.</li>
+              <li><strong>Frontend integration.</strong> React components consume the REST API with centralized error handling and explicit loading states.</li>
+            </ul>
+            <h3 class="dialog-subtitle">Engineering trade-offs</h3>
+            <ul class="detail-list detail-list--tradeoffs">
+              <li>Started with server sessions, then moved to stateless JWTs so the API can scale horizontally without sticky sessions.</li>
+              <li>Kept the schema normalized first and added indexes only after measuring the slow queries.</li>
+            </ul>
+            <div class="dialog-stack">
+              <span>Stack</span>
+              <div class="chips chips--sm">
+                <span class="chip">Java</span><span class="chip">Spring Boot</span><span class="chip">Spring Data JPA</span>
+                <span class="chip">Hibernate</span><span class="chip">MySQL</span><span class="chip">React</span><span class="chip">JWT</span>
+              </div>
+            </div>
+          </template>
+        </article>
+
+        <!-- 4. FLIGHT MANAGEMENT -->
+        <article class="project-card reveal" data-project-card data-category="fullstack"
+                 data-title="Flight Management System"
+                 data-category-label="Enterprise Java · Servlets &amp; JDBC"
+                 data-github="https://github.com/Anannyroyzada">
+          <div class="project-media">
+            <img src="./assets/images/project-flight.svg" alt="Diagram of a servlet-based flight booking system using JDBC transactions against MySQL" width="800" height="500" loading="lazy" decoding="async">
+          </div>
+          <div class="project-body">
+            <div class="project-title-row">
+              <h3 class="project-title">Flight Management System</h3>
+              <span class="pill pill-amber">ACID bookings</span>
+            </div>
+            <p class="project-desc">
+              A servlet-based booking system with transactional seat allocation, prepared
+              statements, and an admin console for flights and inventory.
+            </p>
+            <ul class="project-metrics" aria-label="Results">
+              <li><strong>ACID</strong><span>Seat booking</span></li>
+              <li><strong>JDBC</strong><span>Direct SQL</span></li>
+              <li><strong>Admin</strong><span>Console</span></li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Java Servlets</span>
+              <span class="tag">JDBC</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">HTML / CSS / JS</span>
+            </div>
+            <div class="project-actions">
+              <button class="btn btn-sm btn-ghost" type="button" data-open-project="flight">
+                Read case study
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg>
+              </button>
+              <a class="btn btn-sm btn-quiet" href="https://github.com/Anannyroyzada" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <template id="project-flight">
+            <div class="kpi-grid">
+              <div class="kpi"><span>Database</span><strong>MySQL ACID</strong></div>
+              <div class="kpi"><span>Backend</span><strong>Java Servlets</strong></div>
+              <div class="kpi"><span>Data access</span><strong>Direct JDBC</strong></div>
+              <div class="kpi"><span>Features</span><strong>Booking engine</strong></div>
+            </div>
+            <h3 class="dialog-subtitle">Architecture highlights</h3>
+            <ul class="detail-list">
+              <li><strong>Transactional booking.</strong> Seat availability checks and booking writes happen in one transaction with rollback on failure, preventing double-booking.</li>
+              <li><strong>Direct JDBC.</strong> Prepared statements and explicit connection/transaction handling — no ORM hiding the SQL.</li>
+              <li><strong>Admin operations.</strong> Flight CRUD, schedule changes, and booking oversight behind role checks.</li>
+            </ul>
+            <h3 class="dialog-subtitle">Engineering trade-offs</h3>
+            <ul class="detail-list detail-list--tradeoffs">
+              <li>Chose servlets and JDBC to learn the platform underneath Spring; the next iteration would move to Spring Boot and a pooled DataSource.</li>
+            </ul>
+            <div class="dialog-stack">
+              <span>Stack</span>
+              <div class="chips chips--sm">
+                <span class="chip">Java</span><span class="chip">Servlets</span><span class="chip">JDBC</span>
+                <span class="chip">MySQL</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span>
+              </div>
+            </div>
+          </template>
+        </article>
+
+        <!-- 5. EMPLOYEE MANAGEMENT -->
+        <article class="project-card reveal" data-project-card data-category="fullstack"
+                 data-title="Employee Management System"
+                 data-category-label="Backend REST APIs · Spring Boot"
+                 data-github="https://github.com/Anannyroyzada">
+          <div class="project-media">
+            <img src="./assets/images/project-employee.svg" alt="Diagram of layered Spring Boot REST controllers, services, and JPA repositories backed by MySQL" width="800" height="500" loading="lazy" decoding="async">
+          </div>
+          <div class="project-body">
+            <div class="project-title-row">
+              <h3 class="project-title">Employee Management System</h3>
+              <span class="pill pill-teal">REST APIs</span>
+            </div>
+            <p class="project-desc">
+              Production-shaped REST CRUD APIs with Bean Validation, a global exception handler,
+              and relational mappings that stay out of the controller layer.
+            </p>
+            <ul class="project-metrics" aria-label="Results">
+              <li><strong>REST</strong><span>CRUD contract</span></li>
+              <li><strong>JPA</strong><span>Hibernate ORM</span></li>
+              <li><strong>Valid</strong><span>Bean Validation</span></li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Spring Boot 3</span>
+              <span class="tag">Spring Data JPA</span>
+              <span class="tag">Hibernate</span>
+              <span class="tag">MySQL</span>
+            </div>
+            <div class="project-actions">
+              <button class="btn btn-sm btn-ghost" type="button" data-open-project="employee">
+                Read case study
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg>
+              </button>
+              <a class="btn btn-sm btn-quiet" href="https://github.com/Anannyroyzada" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <template id="project-employee">
+            <div class="kpi-grid">
+              <div class="kpi"><span>API design</span><strong>RESTful CRUD</strong></div>
+              <div class="kpi"><span>Architecture</span><strong>3-tier layered</strong></div>
+              <div class="kpi"><span>ORM</span><strong>Hibernate</strong></div>
+              <div class="kpi"><span>Validation</span><strong>Bean Validation</strong></div>
+            </div>
+            <h3 class="dialog-subtitle">Architecture highlights</h3>
+            <ul class="detail-list">
+              <li><strong>Consistent API contract.</strong> Standard status codes (200/201/204/400/404/500) and a <code>@ControllerAdvice</code> error envelope.</li>
+              <li><strong>Persistence.</strong> Entity relationships, constraints, and repository query methods mapped to a normalized MySQL schema.</li>
+              <li><strong>Validation at the boundary.</strong> Jakarta Bean Validation on request DTOs — not on entities.</li>
+            </ul>
+            <h3 class="dialog-subtitle">Engineering trade-offs</h3>
+            <ul class="detail-list detail-list--tradeoffs">
+              <li>Kept DTOs separate from entities to avoid accidental mass assignment and lazy-loading leaks in JSON.</li>
+            </ul>
+            <div class="dialog-stack">
+              <span>Stack</span>
+              <div class="chips chips--sm">
+                <span class="chip">Java</span><span class="chip">Spring Boot 3</span><span class="chip">Spring Data JPA</span>
+                <span class="chip">Hibernate</span><span class="chip">MySQL</span><span class="chip">Bean Validation</span>
+              </div>
+            </div>
+          </template>
+        </article>
+
+        <!-- 6. CLOUD TOPOLOGY -->
+        <article class="project-card reveal" data-project-card data-category="cloud"
+                 data-title="Full-Stack Cloud Topology"
+                 data-category-label="Cloud Deployments · Docker"
+                 data-github="https://github.com/Anannyroyzada">
+          <div class="project-media">
+            <img src="./assets/images/project-fullstack.svg" alt="Deployment diagram: React on Cloudflare Pages calling containerized Spring Boot APIs on Render with PostgreSQL and Redis" width="800" height="500" loading="lazy" decoding="async">
+          </div>
+          <div class="project-body">
+            <div class="project-title-row">
+              <h3 class="project-title">Full-Stack Cloud Topology</h3>
+              <span class="pill pill-amber">Cloudflare + Render</span>
+            </div>
+            <p class="project-desc">
+              A repeatable deployment blueprint: React and static assets on Cloudflare's edge,
+              containerized Spring Boot APIs on Render, and one Docker Compose command for
+              local parity.
+            </p>
+            <ul class="project-metrics" aria-label="Results">
+              <li><strong>&lt;50 ms</strong><span>Edge TTFB</span></li>
+              <li><strong>Docker</strong><span>Multi-stage</span></li>
+              <li><strong>CI/CD</strong><span>GitHub Actions</span></li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Cloudflare Pages</span>
+              <span class="tag">Render</span>
+              <span class="tag">Docker Compose</span>
+              <span class="tag">GitHub Actions</span>
+            </div>
+            <div class="project-actions">
+              <button class="btn btn-sm btn-ghost" type="button" data-open-project="cloud">
+                Read case study
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg>
+              </button>
+              <a class="btn btn-sm btn-quiet" href="https://github.com/Anannyroyzada" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <template id="project-cloud">
+            <div class="kpi-grid">
+              <div class="kpi"><span>Edge TTFB</span><strong>&lt; 50 ms</strong></div>
+              <div class="kpi"><span>Backend</span><strong>Render container</strong></div>
+              <div class="kpi"><span>SSL &amp; CDN</span><strong>Cloudflare edge</strong></div>
+              <div class="kpi"><span>Local dev</span><strong>Docker Compose</strong></div>
+            </div>
+            <h3 class="dialog-subtitle">Architecture highlights</h3>
+            <ul class="detail-list">
+              <li><strong>Edge frontend.</strong> Vite builds deployed to Cloudflare Pages for global caching, automatic SSL, and zero server maintenance.</li>
+              <li><strong>Containerized API.</strong> Multi-stage Docker builds on Render with health checks and HikariCP connection pooling.</li>
+              <li><strong>Local parity.</strong> One <code>docker-compose.yml</code> boots the API, worker, Postgres, Redis, Prometheus, and Grafana.</li>
+            </ul>
+            <h3 class="dialog-subtitle">Engineering trade-offs</h3>
+            <ul class="detail-list detail-list--tradeoffs">
+              <li>Split static and dynamic hosting to keep the frontend cheap and fast while the API scales independently.</li>
+            </ul>
+            <div class="dialog-stack">
+              <span>Stack</span>
+              <div class="chips chips--sm">
+                <span class="chip">React</span><span class="chip">Vite</span><span class="chip">Spring Boot</span>
+                <span class="chip">Docker</span><span class="chip">Cloudflare Pages</span><span class="chip">Render</span>
+                <span class="chip">PostgreSQL</span><span class="chip">Redis</span>
+              </div>
+            </div>
+          </template>
+        </article>
+
+        <!-- 7. BENCHMARK LAB -->
+        <article class="project-card reveal" data-project-card data-category="cloud"
+                 data-title="JMH &amp; Loom Benchmark Lab"
+                 data-category-label="Performance Benchmarking · Java 21"
+                 data-github="https://github.com/Anannyroyzada">
+          <div class="project-media">
+            <img src="./assets/images/project-benchmarks.svg" alt="Benchmark chart comparing Java 21 virtual threads with a fixed platform thread pool under 10,000 blocking calls" width="800" height="500" loading="lazy" decoding="async">
+          </div>
+          <div class="project-body">
+            <div class="project-title-row">
+              <h3 class="project-title">JMH &amp; Loom Benchmark Lab</h3>
+              <span class="pill pill-green">+1,400% throughput</span>
+            </div>
+            <p class="project-desc">
+              A reproducible harness comparing Java 21 virtual threads with fixed platform pools
+              under 10K blocking calls, plus JMH analysis of the rate-limiter hot path.
+            </p>
+            <ul class="project-metrics" aria-label="Results">
+              <li><strong>+1,400%</strong><span>Throughput</span></li>
+              <li><strong>48.5K</strong><span>req/sec</span></li>
+              <li><strong>JMH</strong><span>Harness</span></li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Java 21</span>
+              <span class="tag">Project Loom</span>
+              <span class="tag">JMH</span>
+              <span class="tag">k6 / Gatling</span>
+            </div>
+            <div class="project-actions">
+              <button class="btn btn-sm btn-ghost" type="button" data-open-project="benchmarks">
+                Read case study
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg>
+              </button>
+              <a class="btn btn-sm btn-quiet" href="https://github.com/Anannyroyzada" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>
+                GitHub
+              </a>
+            </div>
+          </div>
+
+          <template id="project-benchmarks">
+            <div class="kpi-grid">
+              <div class="kpi"><span>Throughput gain</span><strong>+1,400%</strong></div>
+              <div class="kpi"><span>Virtual threads</span><strong>48,500 req/sec</strong></div>
+              <div class="kpi"><span>Thread memory</span><strong>~hundreds of bytes</strong></div>
+              <div class="kpi"><span>Harness</span><strong>JMH + k6</strong></div>
+            </div>
+            <h3 class="dialog-subtitle">Architecture highlights</h3>
+            <ul class="detail-list">
+              <li><strong>Controlled comparison.</strong> Identical workloads across virtual threads and fixed pools; results report throughput, latency, and memory — not a single cherry-picked number.</li>
+              <li><strong>Hot-path profiling.</strong> JMH measures allocation and nanosecond cost of token evaluation under contention.</li>
+              <li><strong>Reproducible.</strong> Gradle tasks and containers produce the same run anywhere, with generated Markdown reports.</li>
+            </ul>
+            <h3 class="dialog-subtitle">Engineering trade-offs</h3>
+            <ul class="detail-list detail-list--tradeoffs">
+              <li>Virtual threads remove thread-per-request cost — not database or downstream latency. The benchmark isolates where the gain actually comes from.</li>
+            </ul>
+            <div class="dialog-stack">
+              <span>Stack</span>
+              <div class="chips chips--sm">
+                <span class="chip">Java 21</span><span class="chip">Project Loom</span><span class="chip">JMH</span>
+                <span class="chip">Gradle</span><span class="chip">k6</span><span class="chip">Gatling</span><span class="chip">Docker</span>
+              </div>
+            </div>
+          </template>
+        </article>
+
+      </div>
+
+      <div class="more-github card reveal">
+        <div>
+          <p class="eyebrow">More work</p>
+          <h3>Smaller experiments live on GitHub.</h3>
+          <p>Spring Boot + React learning track, Java utilities, and a few ML side projects from college.</p>
+        </div>
+        <a class="btn btn-ghost" href="https://github.com/Anannyroyzada?tab=repositories" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>
+          Browse repositories
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section container" id="skills" data-section aria-labelledby="skills-title">
+      <header class="section-head reveal">
+        <p class="eyebrow">04 — Skills</p>
+        <h2 id="skills-title">The toolbelt, honestly scoped.</h2>
+        <p>
+          What I use at work, what I use in systems projects, and the fundamentals underneath.
+          No “expert in everything” badges.
+        </p>
+      </header>
+
+      <div class="skills-grid">
+        <article class="card skill-card reveal">
+          <div class="skill-head">
+            <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-code"></use></svg></span>
+            <h3 class="card-title">Languages</h3>
+          </div>
+          <div class="chips">
+            <span class="chip">Java 8 / 17 / 21</span>
+            <span class="chip">SQL</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">Lua</span>
+            <span class="chip">C / C++</span>
+            <span class="chip">Python (basics)</span>
+          </div>
+        </article>
+
+        <article class="card skill-card reveal" style="--delay: 60ms">
+          <div class="skill-head">
+            <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-layers"></use></svg></span>
+            <h3 class="card-title">Backend &amp; APIs</h3>
+          </div>
+          <div class="chips">
+            <span class="chip">Spring Boot</span>
+            <span class="chip">Spring MVC</span>
+            <span class="chip">REST APIs</span>
+            <span class="chip">Spring Data JPA</span>
+            <span class="chip">Hibernate</span>
+            <span class="chip">JDBC &amp; Servlets</span>
+            <span class="chip">Spring Cloud Gateway</span>
+            <span class="chip">Resilience4j</span>
+            <span class="chip">Flyway</span>
+          </div>
+        </article>
+
+        <article class="card skill-card reveal" style="--delay: 100ms">
+          <div class="skill-head">
+            <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-database"></use></svg></span>
+            <h3 class="card-title">Data &amp; caching</h3>
+          </div>
+          <div class="chips">
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">MySQL</span>
+            <span class="chip">Redis</span>
+            <span class="chip">Redis Streams</span>
+            <span class="chip">Indexing</span>
+            <span class="chip">Transactions</span>
+            <span class="chip">Query tuning</span>
+          </div>
+        </article>
+
+        <article class="card skill-card reveal" style="--delay: 140ms">
+          <div class="skill-head">
+            <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-cpu"></use></svg></span>
+            <h3 class="card-title">Concurrency &amp; testing</h3>
+          </div>
+          <div class="chips">
+            <span class="chip">Java 21 Virtual Threads</span>
+            <span class="chip">ExecutorService</span>
+            <span class="chip">CompletableFuture</span>
+            <span class="chip">JUnit 5</span>
+            <span class="chip">Testcontainers</span>
+            <span class="chip">JMH</span>
+            <span class="chip">Gatling</span>
+            <span class="chip">k6</span>
+          </div>
+        </article>
+
+        <article class="card skill-card skill-card--wide reveal" style="--delay: 180ms">
+          <div class="skill-head">
+            <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-cloud"></use></svg></span>
+            <h3 class="card-title">Cloud, delivery &amp; observability</h3>
+          </div>
+          <div class="chips">
+            <span class="chip">Docker</span>
+            <span class="chip">Docker Compose</span>
+            <span class="chip">GitHub Actions</span>
+            <span class="chip">Cloudflare Pages</span>
+            <span class="chip">Render</span>
+            <span class="chip">Prometheus</span>
+            <span class="chip">Grafana</span>
+            <span class="chip">Git</span>
+            <span class="chip">Maven</span>
+            <span class="chip">Postman</span>
+            <span class="chip">Jira</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section container" id="contact" data-section aria-labelledby="contact-title">
+      <div class="contact-card card reveal">
+        <div class="contact-copy">
+          <p class="eyebrow">05 — Contact</p>
+          <h2 id="contact-title">Hiring for a backend role? Let's talk.</h2>
+          <p class="contact-lede">
+            I'm open to backend and distributed-systems roles in India — remote or hybrid.
+            The fastest way to reach me is email; I usually reply within a day.
+          </p>
+
+          <ul class="contact-facts">
+            <li>
+              <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg></span>
+              <div>
+                <span>Email</span>
+                <a href="mailto:ananny1807@gmail.com">ananny1807@gmail.com</a>
+              </div>
+            </li>
+            <li>
+              <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg></span>
+              <div>
+                <span>Phone / WhatsApp</span>
+                <a href="tel:+918655704599">+91 8655704599</a>
+              </div>
+            </li>
+            <li>
+              <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg></span>
+              <div>
+                <span>Location</span>
+                <strong>India · open to remote / hybrid</strong>
+              </div>
+            </li>
+          </ul>
+
+          <div class="contact-actions">
+            <button class="btn btn-ghost btn-sm" type="button" data-copy-email>
+              <svg class="icon" aria-hidden="true"><use href="#i-link"></use></svg>
+              Copy email
+            </button>
+            <a class="btn btn-ghost btn-sm" href="./Ananny-Royzada-Resume.pdf" download>
+              <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>
+              Résumé (PDF)
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" data-contact-form action="mailto:ananny1807@gmail.com" method="post" enctype="text/plain">
+          <h3 class="form-title">Send a direct message</h3>
+          <div class="field-row">
+            <label class="field">
+              <span>Name</span>
+              <input type="text" name="name" placeholder="Your name" autocomplete="name" required>
+            </label>
+            <label class="field">
+              <span>Email</span>
+              <input type="email" name="email" placeholder="you@company.com" autocomplete="email" required>
+            </label>
+          </div>
+          <label class="field">
+            <span>Message</span>
+            <textarea name="message" rows="4" placeholder="Role, team, or project you'd like to discuss…" required></textarea>
+          </label>
+          <button class="btn btn-primary" type="submit">
+            Send message
+            <svg class="icon" aria-hidden="true"><use href="#i-send"></use></svg>
+          </button>
+          <p class="form-note">Opens your email app with the message pre-filled. Nothing is stored on this site.</p>
+        </form>
+      </div>
+
+      <div class="contact-links">
+        <a class="contact-link-card reveal" href="https://github.com/Anannyroyzada" target="_blank" rel="noopener noreferrer">
+          <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg></span>
+          <span><strong>GitHub</strong><small>github.com/Anannyroyzada</small></span>
+          <svg class="icon contact-link-arrow" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg>
+        </a>
+        <a class="contact-link-card reveal" style="--delay: 40ms" href="https://www.linkedin.com/in/anannyroyzada/" target="_blank" rel="noopener noreferrer">
+          <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-linkedin"></use></svg></span>
+          <span><strong>LinkedIn</strong><small>in/anannyroyzada</small></span>
+          <svg class="icon contact-link-arrow" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg>
+        </a>
+        <a class="contact-link-card reveal" style="--delay: 80ms" href="https://leetcode.com/u/ananny/" target="_blank" rel="noopener noreferrer">
+          <span class="icon-box"><svg class="icon" aria-hidden="true"><use href="#i-code"></use></svg></span>
+          <span><strong>LeetCode</strong><small>leetcode.com/u/ananny</small></span>
+          <svg class="icon contact-link-arrow" aria-hidden="true"><use href="#i-arrow-up-right"></use></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span data-year>2026</span> Ananny Royzada. Built with semantic HTML, modern CSS, and vanilla JS.</p>
+      <div class="footer-links">
+        <a href="https://github.com/Anannyroyzada" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/anannyroyzada/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="./resume.html">Résumé</a>
+        <button type="button" class="footer-top" data-back-to-top>
+          Back to top
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg>
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project case-study dialog -->
+  <dialog class="project-dialog" id="project-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-inner">
+      <button class="dialog-close icon-btn" type="button" data-close-dialog aria-label="Close case study">
+        <svg class="icon" aria-hidden="true"><use href="#i-x"></use></svg>
+      </button>
+
+      <div class="dialog-media">
+        <img id="dialog-img" alt="" width="800" height="500">
+      </div>
+
+      <div class="dialog-body">
+        <p class="eyebrow" id="dialog-category">Case study</p>
+        <h2 id="dialog-title">Project</h2>
+        <div id="dialog-content"></div>
+        <div class="dialog-actions">
+          <a class="btn btn-primary" id="dialog-github" href="https://github.com/Anannyroyzada" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true"><use href="#i-github"></use></svg>
+            <span>View code on GitHub</span>
+          </a>
+          <a class="btn btn-ghost" href="./Ananny-Royzada-Resume.pdf" download>
+            <svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg>
+            <span>Download résumé</span>
+          </a>
+        </div>
+        <p class="dialog-note">Benchmarks were measured in local Gatling/k6 runs. Happy to walk through the methodology and trade-offs in an interview.</p>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
   <script type="module" src="./assets/js/script.js"></script>
-
-  <!--
-    - Ion Icon Link
-  -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 </body>
-
 </html>

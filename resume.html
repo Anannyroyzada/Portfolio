@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ananny Royzada — Résumé | Backend Software Engineer</title>
+  <meta name="description" content="Résumé of Ananny Royzada, Backend Software Engineer at TCS. Java, Spring Boot, Redis, PostgreSQL, distributed systems.">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="./assets/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #0f172a;
+      --body: #334155;
+      --muted: #64748b;
+      --line: #d8dee9;
+      --accent: #0f766e;
+      --paper: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #e9eef5;
+      color: var(--body);
+      font-family: "Inter", -apple-system, "Segoe UI", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 20px;
+      background: rgba(15, 23, 42, 0.92);
+      color: #e2e8f0;
+      font-size: 13px;
+      backdrop-filter: blur(10px);
+    }
+
+    .toolbar a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #cbd5e1;
+    }
+
+    .toolbar a:hover { color: #5eead4; }
+
+    .toolbar button {
+      padding: 8px 14px;
+      color: #04120f;
+      background: linear-gradient(135deg, #2dd4bf, #38bdf8);
+      border: 0;
+      border-radius: 8px;
+      font: inherit;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .toolbar button:hover { filter: brightness(1.05); }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 24px auto;
+      padding: 13mm 15mm;
+      background: var(--paper);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16);
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .resume-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: -0.6px;
+      line-height: 1.1;
+    }
+
+    .role {
+      margin: 4px 0 0;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    .contact {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      text-align: right;
+      color: var(--body);
+      font-size: 9.2px;
+      line-height: 1.45;
+    }
+
+    .contact a { color: var(--body); }
+    .contact a:hover { color: var(--accent); }
+
+    section { margin-top: 11px; }
+
+    h2 {
+      margin: 0 0 6px;
+      padding-bottom: 3px;
+      color: var(--accent);
+      border-bottom: 1px solid var(--line);
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin: 0;
+      font-size: 9.6px;
+      line-height: 1.5;
+    }
+
+    .skill-row {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 8px;
+      margin-bottom: 3px;
+      font-size: 9.4px;
+      line-height: 1.45;
+    }
+
+    .skill-row strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .job-head,
+    .project-head,
+    .edu-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .job-head strong,
+    .project-head strong,
+    .edu-head strong {
+      color: var(--ink);
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .job-head span,
+    .project-head span,
+    .edu-head span {
+      flex: none;
+      color: var(--muted);
+      font-size: 9px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .job-sub {
+      margin: 1px 0 4px;
+      color: var(--accent);
+      font-size: 9.4px;
+      font-weight: 600;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 13px;
+    }
+
+    li {
+      margin-bottom: 2px;
+      font-size: 9.4px;
+      line-height: 1.5;
+    }
+
+    li::marker { color: var(--accent); }
+
+    .project { margin-bottom: 6px; }
+    .project:last-child { margin-bottom: 0; }
+
+    .tech {
+      margin: 1px 0 3px;
+      color: var(--muted);
+      font-size: 8.9px;
+      font-style: italic;
+    }
+
+    .edu-sub {
+      margin: 2px 0 3px;
+      color: var(--muted);
+      font-size: 9.2px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .achievements li { font-size: 9.4px; }
+
+    .footer-note {
+      margin-top: 10px;
+      padding-top: 6px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 8.4px;
+      text-align: center;
+    }
+
+    @page { size: A4; margin: 0; }
+
+    @media print {
+      html, body { background: #fff; }
+      .toolbar { display: none !important; }
+      .page {
+        width: auto;
+        min-height: auto;
+        margin: 0;
+        padding: 10mm 13mm;
+        box-shadow: none;
+      }
+      section { break-inside: avoid; }
+      .project, .job { break-inside: avoid; }
+    }
+
+    @media (max-width: 820px) {
+      .page { width: 100%; min-height: 0; margin: 0; padding: 20px; }
+      .resume-head { flex-direction: column; }
+      .contact { text-align: left; }
+      .two-col { grid-template-columns: 1fr; gap: 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="toolbar">
+    <a href="./index.html">&larr; Back to portfolio</a>
+    <button type="button" id="print-btn">Download PDF</button>
+  </div>
+
+  <main class="page">
+    <header class="resume-head">
+      <div>
+        <h1>Ananny Royzada</h1>
+        <p class="role">Backend Software Engineer</p>
+      </div>
+      <div class="contact">
+        <a href="mailto:ananny1807@gmail.com">ananny1807@gmail.com</a>
+        <span>+91 8655704599 &nbsp;·&nbsp; India</span>
+        <a href="https://www.linkedin.com/in/anannyroyzada/">linkedin.com/in/anannyroyzada</a>
+        <a href="https://github.com/Anannyroyzada">github.com/Anannyroyzada</a>
+        <a href="https://leetcode.com/u/ananny/">leetcode.com/u/ananny</a>
+      </div>
+    </header>
+
+    <section>
+      <h2>Summary</h2>
+      <p>
+        Backend engineer with 1.5+ years at Tata Consultancy Services building Java and Spring Boot
+        services for enterprise workflows. Strong in REST API design, SQL/JPA persistence, and
+        production debugging, with hands-on systems work in Redis Lua rate limiting, PostgreSQL
+        <code>SKIP LOCKED</code> job queues, and Java 21 virtual threads. Looking for backend or
+        distributed-systems roles where I can own services end-to-end.
+      </p>
+    </section>
+
+    <section>
+      <h2>Technical Skills</h2>
+      <div class="skill-row"><strong>Languages</strong><span>Java (8 / 17 / 21), SQL, JavaScript, Lua, C/C++, Python (basics)</span></div>
+      <div class="skill-row"><strong>Backend</strong><span>Spring Boot, Spring MVC, REST APIs, Spring Data JPA, Hibernate, JDBC, Servlets, Spring Cloud Gateway, Resilience4j, Flyway</span></div>
+      <div class="skill-row"><strong>Data &amp; caching</strong><span>PostgreSQL, MySQL, Redis, Redis Streams, indexing, transactions, query tuning</span></div>
+      <div class="skill-row"><strong>Concurrency &amp; testing</strong><span>Java 21 Virtual Threads, ExecutorService, CompletableFuture, JUnit 5, Testcontainers, JMH, Gatling, k6</span></div>
+      <div class="skill-row"><strong>Cloud &amp; tools</strong><span>Docker, Docker Compose, GitHub Actions, Cloudflare Pages, Render, Prometheus, Grafana, Git, Maven, Jira, Postman</span></div>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <div class="job">
+        <div class="job-head">
+          <strong>Tata Consultancy Services</strong>
+          <span>July 2024 – Present</span>
+        </div>
+        <p class="job-sub">Assistant System Engineer · Software Development · India</p>
+        <ul>
+          <li>Develop and maintain backend components using Java, Spring Boot, REST APIs, and SQL for enterprise applications.</li>
+          <li>Build and integrate RESTful services with JSON contracts, input validation, database operations, and reusable components.</li>
+          <li>Write and optimize SQL for data retrieval, application workflows, reporting, and production issue analysis.</li>
+          <li>Diagnose defects through debugging, log analysis, and root-cause analysis; deliver fixes with cross-functional QA and business teams.</li>
+          <li>Work in Agile/Scrum using Git, Jira, and Postman for version control, API testing, and issue tracking.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+
+      <div class="project">
+        <div class="project-head">
+          <strong>Distributed Rate Limiter + API Gateway</strong>
+          <span>Systems</span>
+        </div>
+        <p class="tech">Java 21 · Spring Cloud Gateway · Redis · Lua · Resilience4j · Gatling</p>
+        <ul>
+          <li>Implemented token-bucket and sliding-window limits as atomic Redis Lua scripts; added a custom reactive GatewayFilterFactory on Netty.</li>
+          <li>Added Resilience4j circuit breakers with fail-open/fail-closed policies; Gatling benchmarks measured 45K+ RPS at p99 &lt; 1.8 ms.</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <div class="project-head">
+          <strong>Distributed Job Queue &amp; Workflow Engine</strong>
+          <span>Systems</span>
+        </div>
+        <p class="tech">Java 21 · PostgreSQL · SKIP LOCKED · Virtual Threads · Flyway · Testcontainers</p>
+        <ul>
+          <li>Built a Postgres-backed broker using <code>SELECT … FOR UPDATE SKIP LOCKED</code> and virtual-thread dispatch for 10K+ concurrent jobs with no dequeue contention.</li>
+          <li>Added visibility timeouts, heartbeats, exponential backoff, dead-letter queues, and idempotency keys; chaos-tested worker kills with zero message loss.</li>
+        </ul>
+      </div>
+
+      <div class="project">
+        <div class="project-head">
+          <strong>Personal Productivity Tracker</strong>
+          <span>Full-stack</span>
+        </div>
+        <p class="tech">Spring Boot · Spring Data JPA · MySQL · JWT · React</p>
+        <ul>
+          <li>Built a 3-tier REST API with stateless JWT authentication, per-user data isolation, Bean Validation, and a global exception handler.</li>
+          <li>Connected a React SPA with centralized error handling, loading states, and token-expiry re-authentication.</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="two-col">
+      <section>
+        <h2>Education</h2>
+        <div class="edu-head">
+          <strong>SRM Institute of Science and Technology</strong>
+          <span>2020 – 2024</span>
+        </div>
+        <p class="edu-sub">B.Tech, Computer Science &amp; Business Systems · Chennai, India · CGPA&nbsp;8.64&nbsp;/&nbsp;10</p>
+        <p>Coursework: Data Structures &amp; Algorithms, DBMS, Operating Systems, Computer Networks, OOP.</p>
+      </section>
+
+      <section>
+        <h2>Achievements</h2>
+        <ul class="achievements">
+          <li>Solved 200+ LeetCode problems in Java, focusing on optimal time and space complexity.</li>
+          <li>Built 7 engineered projects across distributed systems, full-stack development, cloud deployment, and performance benchmarking.</li>
+          <li>Comfortable with production debugging: logs, SQL analysis, root-cause analysis, and cross-team fixes.</li>
+        </ul>
+      </section>
+    </div>
+
+    <p class="footer-note">References and project walkthroughs available on request.</p>
+  </main>
+
+  <script>
+    document.getElementById('print-btn')?.addEventListener('click', function () {
+      window.print();
+    });
+  </script>
+</body>
+</html>

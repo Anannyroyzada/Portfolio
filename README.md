@@ -1,155 +1,108 @@
-# Ananny Royzada | Backend & Distributed Systems Portfolio
+# Ananny Royzada — Portfolio
 
-> Production-grade personal portfolio showcasing high-concurrency systems, low-latency microservices, Java 21 Virtual Threads, and cloud architectures.
+Personal site for a backend engineering job search: seven systems case studies, a metrics-first
+homepage, and an ATS-friendly résumé.
 
----
+Built with plain HTML, CSS, and vanilla JS on top of Vite. No framework, no runtime dependencies —
+the whole page ships as static files.
 
-## 📁 Repository Structure
+## Quick start
+
+```bash
+npm install
+npm run dev      # http://localhost:5173
+npm run build    # static output in dist/
+npm run preview  # preview the production build
+```
+
+Requires Node 18+.
+
+## What's in here
 
 ```
 Portfolio/
-├── index.html                   # Customized portfolio entry point
+├── index.html                     # Homepage: hero, about, experience, projects, skills, contact
+├── resume.html                    # Print/ATS résumé (source of the PDF)
+├── vite.config.js                 # Multi-page build: index.html + resume.html
 ├── assets/
-│   ├── css/
-│   │   └── style.css            # Responsive dark-mode styling with tech badge & modal additions
-│   ├── js/
-│   │   └── script.js            # Vanilla JS navigation, filtering, and architecture modals
-│   └── images/
-│       ├── project-ratelimiter.svg  # Distributed Rate Limiter & Gateway Blueprint
-│       ├── project-jobqueue.svg     # Distributed Job Queue & Virtual Threads Blueprint
-│       ├── project-fullstack.svg    # Cloudflare Pages + Render Deployment Topology
-│       ├── project-benchmarks.svg   # JMH Microbenchmarks & Project Loom Analysis
-│       └── ...                      # Avatars, icons, logos
-├── .gitignore                   # Ignores OS files, editor metadata, and temporary clone
-└── README.md                    # Deployment & engineering execution guide
+│   ├── css/style.css              # Design tokens, dark/light themes, layout, components
+│   ├── js/script.js               # Theme, nav, filters, dialogs, counters, contact form
+│   └── images/                    # Project diagrams, avatar, favicon
+├── public/
+│   ├── Ananny-Royzada-Resume.pdf  # Pre-generated PDF (linked from the header + contact)
+│   ├── _headers                   # Security + cache headers (Cloudflare Pages / Netlify)
+│   └── robots.txt
+└── dist/                          # Build output (generated)
 ```
 
----
+## Editing content
 
-## 🚀 Quick Local Preview
+- **Projects.** Each card lives in `index.html` as `<article data-project-card>` with a matching
+  `<template id="project-<id>">` holding the case-study body. The `data-category` attribute
+  (`distributed`, `fullstack`, `cloud`) drives the filter buttons. Card copy, KPIs, and the
+  dialog content are independent, so update both when you change a project.
+- **Metrics.** Animated numbers use `data-counter` with `data-to`, `data-prefix`, `data-suffix`,
+  and `data-decimals`. Keep them consistent with the numbers you quote in interviews.
+- **Résumé.** Edit `resume.html`, then regenerate the PDF (below). The header and contact section
+  link to `./Ananny-Royzada-Resume.pdf`.
 
-To test and preview the portfolio locally, you can use any static file server:
+### Regenerating the PDF
 
-### Option A: VS Code Live Server
-Right-click `index.html` and click **"Open with Live Server"**.
+The PDF is printed from `resume.html` with headless Chrome so the layout matches the page:
 
-### Option B: Python
-```bash
-python -m http.server 8000
-```
-Then visit `http://localhost:8000` in your browser.
-
-### Option C: Node.js (npx)
-```bash
-npx serve .
-```
-
----
-
-## 🧹 Transition from Clone to Fresh Git Repository
-
-As requested, all required assets and customized files are placed cleanly in the root `Portfolio/` directory and do **not** depend on `vcard-personal-portfolio/`.
-
-### Step 1: Delete the temporary clone directory
-In PowerShell or terminal:
 ```powershell
-Remove-Item -Recurse -Force vcard-personal-portfolio
+# with `npm run dev` running on port 5173
+& "C:\Program Files\Google\Chrome\Application\chrome.exe" `
+  --headless=new --disable-gpu --no-pdf-header-footer `
+  --print-to-pdf="public\Ananny-Royzada-Resume.pdf" `
+  "http://127.0.0.1:5173/resume.html"
 ```
 
-### Step 2: Initialize your fresh Git repository & push to GitHub
-```powershell
-git init
-git add .
-git commit -m "feat: initial commit for distributed systems portfolio"
-git branch -M main
-git remote add origin https://github.com/<your-github-username>/portfolio.git
-git push -u origin main
-```
+You can also open `/resume.html` and use the **Download PDF** button (browser print dialog,
+"Save as PDF", margins: none).
 
----
+## Deploying
 
-## 🌐 Cloudflare Pages Hosting Setup (Free & Global Edge CDN)
+The build is fully static, so any host works. `base: './'` in `vite.config.js` keeps asset paths
+relative, so the site also works from a subpath (e.g. a GitHub Pages project site).
 
-### Deploying This Portfolio:
-1. Log in to [Cloudflare Dashboard](https://dash.cloudflare.com/).
-2. Navigate to **Workers & Pages** -> **Create application** -> **Pages** -> **Connect to Git**.
-3. Select your `portfolio` repository.
-4. Set the build configuration:
-   - **Framework preset**: `None`
-   - **Build command**: *(leave empty)*
-   - **Build output directory**: `.` *(root)*
-5. Click **Save and Deploy**.
-6. Cloudflare provides an instant URL (e.g. `https://ananny-portfolio.pages.dev`) with automated SSL and global edge caching.
+**Cloudflare Pages**
 
-### Deploying Future React Frontends on Cloudflare Pages:
-* Framework preset: `Vite` (or `Create React App`)
-* Build command: `npm run build`
-* Build output directory: `dist`
-* Custom domain/subdomain: e.g., `admin.yourdomain.com` or `queue.yourdomain.com`.
+| Setting | Value |
+| --- | --- |
+| Framework preset | None |
+| Build command | `npm run build` |
+| Build output directory | `dist` |
 
----
+`public/_headers` is picked up automatically on Cloudflare Pages (and Netlify) to set
+security headers and long-lived caching for hashed assets.
 
-## ☁️ Render Hosting Setup (Spring Boot + PostgreSQL + Redis)
+**GitHub Pages** — build, then publish `dist/`. For a project site
+(`user.github.io/repo`), relative paths already work.
 
-For your backend microservices and databases:
+## Before you share this link
 
-### 1. Spring Boot API Gateway / Service Deployment:
-* Create a **New Web Service** on [Render](https://render.com/).
-* Connect your Spring Boot repository.
-* Configure runtime: **Docker** (recommended) or **Java**.
-* If using Docker, Render builds your multi-stage `Dockerfile`:
-  ```dockerfile
-  FROM eclipse-temurin:21-jdk-alpine AS builder
-  WORKDIR /workspace
-  COPY . .
-  RUN ./gradlew bootJar --no-daemon
+A few things only you can confirm:
 
-  FROM eclipse-temurin:21-jre-alpine
-  WORKDIR /app
-  COPY --from=builder /workspace/build/libs/*.jar app.jar
-  EXPOSE 8080
-  ENTRYPOINT ["java", "-jar", "app.jar"]
-  ```
+- [ ] **Publish the systems repos.** The rate limiter, job queue, and benchmark projects link to
+      your GitHub profile, not to repositories. Public repos turn "I built this" into verifiable
+      proof — push them and point each card's `data-github` at the repo.
+- [ ] **Re-run the benchmarks.** The homepage quotes 45K RPS, p99 < 1.8 ms, and +1,400% throughput
+      from local Gatling/k6 and JMH runs. Re-run on the machine you'll demo on and keep the numbers
+      you can defend line by line.
+- [ ] **Check the résumé PDF is current** after any content edit (`public/Ananny-Royzada-Resume.pdf`).
+- [ ] **Test on a phone** — the layout is built mobile-first below 900px, including the filter bar
+      and case-study dialog.
+- [ ] **Optional: replace the generated OG image.** `public/og-image.png` is a code-drawn card.
+      Swap in a real photo or branded graphic (1200×630) for a stronger link preview.
 
-### 2. Managed PostgreSQL on Render:
-* Create a **New PostgreSQL Database** on Render.
-* Copy the Internal Connection String and set it in your Spring Boot environment variables:
-  * `SPRING_DATASOURCE_URL=jdbc:postgresql://<host>:5432/<dbname>`
-  * `SPRING_DATASOURCE_USERNAME=<user>`
-  * `SPRING_DATASOURCE_PASSWORD=<password>`
+## Accessibility & performance notes
 
-### 3. Redis Instance:
-* Spin up a Redis instance on Render or [Upstash Redis](https://upstash.com/) (free tier with REST/Lettuce support).
-* Set `SPRING_DATA_REDIS_HOST` and `SPRING_DATA_REDIS_PORT`.
-
----
-
-## 🛠️ Project Implementation Roadmaps
-
-### Project 1: Distributed Rate Limiter + API Gateway
-1. **Core Gateway**: Spring Cloud Gateway route predicates with custom reactive `GatewayFilterFactory`.
-2. **Atomic Lua Scripts**:
-   - `sliding_window.lua`: Ordered set (`ZADD`, `ZREMRANGEBYSCORE`, `ZCARD`, `EXPIRE`) to enforce precision windows without race conditions.
-   - `token_bucket.lua`: Atomic token replenishment based on timestamp delta.
-3. **Resilience**: Resilience4j Circuit Breaker with fallback to fail-open (prioritize availability) or fail-closed (protect downstream core services).
-4. **Benchmarking**:
-   - Gatling scenario simulating 50k RPS with p50, p95, and p99 latency reporting.
-   - JMH test on local evaluation methods.
-
-### Project 2: Distributed Job Queue / Workflow Engine
-1. **Database Schema & Migrations**:
-   - Flyway migration defining `jobs` table with `id`, `status` (`PENDING`, `RUNNING`, `COMPLETED`, `FAILED`), `retry_count`, `visibility_timeout`, and `idempotency_key`.
-2. **Worker Polling Loop**:
-   ```sql
-   SELECT id, payload FROM jobs
-   WHERE status = 'PENDING' AND visibility_timeout <= NOW()
-   ORDER BY priority DESC, created_at ASC
-   LIMIT 10
-   FOR UPDATE SKIP LOCKED;
-   ```
-3. **Java 21 Virtual Threads**:
-   - Dispatch fetched jobs onto `Executors.newVirtualThreadPerTaskExecutor()`.
-   - Implement heartbeat updater to extend visibility timeout for long-running tasks.
-4. **Reliability & Testing**:
-   - Dead-letter queue (DLQ) after maximum retry count with exponential backoff.
-   - Testcontainers test: Kill Postgres container mid-task to verify retry recovery and zero message loss.
+- Semantic landmarks, a skip link, visible focus rings, and `aria-*` state on the menu, theme
+  toggle, filters, and dialog.
+- Case studies use the native `<dialog>` element, so focus trapping and <kbd>Esc</kbd> come from
+  the browser; focus returns to the button that opened it.
+- Scroll reveals are opt-in via an `html.js` class — if JavaScript fails, all content stays visible.
+- `prefers-reduced-motion` disables transitions, counters, and terminal typing.
+- No icon font, no CSS framework, no tracking scripts. Fonts load from Google Fonts with
+  `display=swap`.
