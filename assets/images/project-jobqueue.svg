@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
   <defs>
     <linearGradient id="jq-bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0f172a"/>
-      <stop offset="100%" stop-color="#020617"/>
+      <stop offset="0%" stop-color="#f3eedd"/>
+      <stop offset="100%" stop-color="#f3eedd"/>
     </linearGradient>
     <filter id="jq-shadow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#000" flood-opacity="0.4"/>
@@ -12,7 +12,7 @@
   <rect width="800" height="500" fill="url(#jq-bg)"/>
 
   <!-- Subtle grid -->
-  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+  <g opacity="0.08" stroke="#2a2f1d" stroke-width="1">
     <line x1="100" y1="0" x2="100" y2="500"/>
     <line x1="200" y1="0" x2="200" y2="500"/>
     <line x1="300" y1="0" x2="300" y2="500"/>
@@ -27,80 +27,80 @@
   </g>
 
   <!-- Title Badge -->
-  <rect x="50" y="35" width="230" height="32" rx="16" fill="#1e293b" stroke="#334155"/>
-  <circle cx="68" cy="51" r="5" fill="#10b981"/>
-  <text x="82" y="56" fill="#94a3b8" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" letter-spacing="1">JAVA 21 VIRTUAL THREADS</text>
+  <rect x="50" y="35" width="230" height="32" rx="16" fill="#f6f1e1" stroke="#d8d1bd"/>
+  <circle cx="68" cy="51" r="5" fill="#4c7a3a"/>
+  <text x="82" y="56" fill="#555a44" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="600" letter-spacing="1">JAVA 21 VIRTUAL THREADS</text>
 
   <!-- Header Text -->
-  <text x="50" y="105" fill="#f8fafc" font-family="'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="700">Distributed Job Queue &amp; Workflow Engine</text>
-  <text x="50" y="130" fill="#94a3b8" font-family="'Segoe UI', Roboto, sans-serif" font-size="14">PostgreSQL SKIP LOCKED, Dead-Letter Queues, &amp; Idempotency</text>
+  <text x="50" y="105" fill="#2a2f1d" font-family="'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="700">Distributed Job Queue &amp; Workflow Engine</text>
+  <text x="50" y="130" fill="#555a44" font-family="'Segoe UI', Roboto, sans-serif" font-size="14">PostgreSQL SKIP LOCKED, Dead-Letter Queues, &amp; Idempotency</text>
 
   <!-- Postgres Broker Node -->
   <g transform="translate(60, 180)" filter="url(#jq-shadow)">
-    <rect width="200" height="170" rx="14" fill="#1e293b" stroke="#38bdf8" stroke-width="1.5"/>
-    <rect x="15" y="15" width="170" height="30" rx="6" fill="#0284c7" fill-opacity="0.25"/>
-    <text x="100" y="35" fill="#38bdf8" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" text-anchor="middle">POSTGRESQL QUEUE</text>
-    <text x="25" y="75" fill="#f1f5f9" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600">SELECT ... FOR UPDATE</text>
-    <text x="25" y="93" fill="#38bdf8" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600">SKIP LOCKED</text>
-    <text x="25" y="118" fill="#94a3b8" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Zero lock contention</text>
-    <text x="25" y="138" fill="#94a3b8" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Flyway schema migrations</text>
-    <text x="25" y="158" fill="#94a3b8" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Idempotency keys</text>
+    <rect width="200" height="170" rx="14" fill="#f6f1e1" stroke="#5f7030" stroke-width="1.5"/>
+    <rect x="15" y="15" width="170" height="30" rx="6" fill="#4c7a3a" fill-opacity="0.25"/>
+    <text x="100" y="35" fill="#5f7030" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" text-anchor="middle">POSTGRESQL QUEUE</text>
+    <text x="25" y="75" fill="#2a2f1d" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600">SELECT ... FOR UPDATE</text>
+    <text x="25" y="93" fill="#5f7030" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600">SKIP LOCKED</text>
+    <text x="25" y="118" fill="#555a44" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Zero lock contention</text>
+    <text x="25" y="138" fill="#555a44" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Flyway schema migrations</text>
+    <text x="25" y="158" fill="#555a44" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Idempotency keys</text>
   </g>
 
   <!-- Arrow to Virtual Threads -->
-  <path d="M260 265 L 325 265" stroke="#10b981" stroke-width="2.5" stroke-dasharray="5,4"/>
-  <polygon points="328,265 320,260 320,270" fill="#10b981"/>
+  <path d="M260 265 L 325 265" stroke="#4c7a3a" stroke-width="2.5" stroke-dasharray="5,4"/>
+  <polygon points="328,265 320,260 320,270" fill="#4c7a3a"/>
 
   <!-- Virtual Thread Workers Node -->
   <g transform="translate(330, 165)" filter="url(#jq-shadow)">
-    <rect width="210" height="190" rx="14" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
-    <rect x="15" y="15" width="180" height="30" rx="6" fill="#059669" fill-opacity="0.25"/>
-    <text x="105" y="35" fill="#34d399" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" text-anchor="middle">WORKER POOL (JAVA 21)</text>
-    <text x="25" y="75" fill="#f1f5f9" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">Virtual Threads (Project Loom)</text>
-    <text x="25" y="98" fill="#94a3b8" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Non-blocking task dispatch</text>
-    <text x="25" y="118" fill="#94a3b8" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Heartbeat &amp; auto recovery</text>
-    <text x="25" y="138" fill="#94a3b8" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Visibility timeouts</text>
-    <text x="25" y="158" fill="#94a3b8" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Graceful JVM shutdown</text>
-    <text x="25" y="178" fill="#34d399" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600">&#x2713; 10,000+ concurrent jobs</text>
+    <rect width="210" height="190" rx="14" fill="#f6f1e1" stroke="#4c7a3a" stroke-width="1.5"/>
+    <rect x="15" y="15" width="180" height="30" rx="6" fill="#4c7a3a" fill-opacity="0.25"/>
+    <text x="105" y="35" fill="#4c7a3a" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" text-anchor="middle">WORKER POOL (JAVA 21)</text>
+    <text x="25" y="75" fill="#2a2f1d" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="600">Virtual Threads (Project Loom)</text>
+    <text x="25" y="98" fill="#555a44" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Non-blocking task dispatch</text>
+    <text x="25" y="118" fill="#555a44" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Heartbeat &amp; auto recovery</text>
+    <text x="25" y="138" fill="#555a44" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Visibility timeouts</text>
+    <text x="25" y="158" fill="#555a44" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Graceful JVM shutdown</text>
+    <text x="25" y="178" fill="#4c7a3a" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600">&#x2713; 10,000+ concurrent jobs</text>
   </g>
 
   <!-- Flow to Reliability & DLQ -->
-  <path d="M540 265 L 595 265" stroke="#f43f5e" stroke-width="2.5"/>
-  <polygon points="598,265 590,260 590,270" fill="#f43f5e"/>
+  <path d="M540 265 L 595 265" stroke="#a94a3d" stroke-width="2.5"/>
+  <polygon points="598,265 590,260 590,270" fill="#a94a3d"/>
 
   <!-- Reliability / DLQ Node -->
   <g transform="translate(600, 180)" filter="url(#jq-shadow)">
-    <rect width="150" height="170" rx="14" fill="#1e293b" stroke="#f43f5e" stroke-width="1.5"/>
-    <rect x="12" y="15" width="126" height="30" rx="6" fill="#be123c" fill-opacity="0.25"/>
-    <text x="75" y="35" fill="#fb7185" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" text-anchor="middle">RELIABILITY</text>
-    <text x="18" y="75" fill="#f1f5f9" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600">Dead-Letter Queue</text>
-    <text x="18" y="98" fill="#94a3b8" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Exp. backoff</text>
-    <text x="18" y="118" fill="#94a3b8" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Poison pill catch</text>
-    <text x="18" y="138" fill="#94a3b8" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Admin replay API</text>
+    <rect width="150" height="170" rx="14" fill="#f6f1e1" stroke="#a94a3d" stroke-width="1.5"/>
+    <rect x="12" y="15" width="126" height="30" rx="6" fill="#a94a3d" fill-opacity="0.25"/>
+    <text x="75" y="35" fill="#a94a3d" font-family="'Segoe UI', sans-serif" font-size="12" font-weight="700" text-anchor="middle">RELIABILITY</text>
+    <text x="18" y="75" fill="#2a2f1d" font-family="'Segoe UI', sans-serif" font-size="11" font-weight="600">Dead-Letter Queue</text>
+    <text x="18" y="98" fill="#555a44" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Exp. backoff</text>
+    <text x="18" y="118" fill="#555a44" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Poison pill catch</text>
+    <text x="18" y="138" fill="#555a44" font-family="'Segoe UI', sans-serif" font-size="11">&#x2022; Admin replay API</text>
   </g>
 
   <!-- Bottom Metric Badges -->
   <g transform="translate(60, 400)">
-    <rect width="155" height="55" rx="8" fill="#161e2e" stroke="#253248"/>
-    <text x="20" y="24" fill="#64748b" font-family="'Segoe UI', sans-serif" font-size="11">CONCURRENCY</text>
-    <text x="20" y="44" fill="#10b981" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="700">Virtual Threads</text>
+    <rect width="155" height="55" rx="8" fill="#ece6d4" stroke="#d8d1bd"/>
+    <text x="20" y="24" fill="#555a44" font-family="'Segoe UI', sans-serif" font-size="11">CONCURRENCY</text>
+    <text x="20" y="44" fill="#4c7a3a" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="700">Virtual Threads</text>
   </g>
 
   <g transform="translate(240, 400)">
-    <rect width="155" height="55" rx="8" fill="#161e2e" stroke="#253248"/>
-    <text x="20" y="24" fill="#64748b" font-family="'Segoe UI', sans-serif" font-size="11">TEST SUITE</text>
-    <text x="20" y="44" fill="#38bdf8" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="700">Testcontainers</text>
+    <rect width="155" height="55" rx="8" fill="#ece6d4" stroke="#d8d1bd"/>
+    <text x="20" y="24" fill="#555a44" font-family="'Segoe UI', sans-serif" font-size="11">TEST SUITE</text>
+    <text x="20" y="44" fill="#5f7030" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="700">Testcontainers</text>
   </g>
 
   <g transform="translate(420, 400)">
-    <rect width="165" height="55" rx="8" fill="#161e2e" stroke="#253248"/>
-    <text x="20" y="24" fill="#64748b" font-family="'Segoe UI', sans-serif" font-size="11">RECOVERY</text>
-    <text x="20" y="44" fill="#fb7185" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="700">Auto Heartbeat</text>
+    <rect width="165" height="55" rx="8" fill="#ece6d4" stroke="#d8d1bd"/>
+    <text x="20" y="24" fill="#555a44" font-family="'Segoe UI', sans-serif" font-size="11">RECOVERY</text>
+    <text x="20" y="44" fill="#a94a3d" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="700">Auto Heartbeat</text>
   </g>
 
   <g transform="translate(610, 400)">
-    <rect width="130" height="55" rx="8" fill="#161e2e" stroke="#253248"/>
-    <text x="20" y="24" fill="#64748b" font-family="'Segoe UI', sans-serif" font-size="11">ADMIN API</text>
-    <text x="20" y="44" fill="#a855f7" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="700">REST Endpoints</text>
+    <rect width="130" height="55" rx="8" fill="#ece6d4" stroke="#d8d1bd"/>
+    <text x="20" y="24" fill="#555a44" font-family="'Segoe UI', sans-serif" font-size="11">ADMIN API</text>
+    <text x="20" y="44" fill="#7d5f34" font-family="'Segoe UI', sans-serif" font-size="16" font-weight="700">REST Endpoints</text>
   </g>
 </svg>

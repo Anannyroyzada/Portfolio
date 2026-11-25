@@ -24,7 +24,7 @@ function syncThemeUI() {
   }
 
   if (themeMeta) {
-    themeMeta.setAttribute('content', isDark ? '#070b12' : '#f7f9fc');
+    themeMeta.setAttribute('content', isDark ? '#14160f' : '#f4efe4');
   }
 }
 
@@ -45,16 +45,6 @@ syncThemeUI();
 
 themeToggle?.addEventListener('click', () => {
   setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
-});
-
-window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (event) => {
-  try {
-    if (!localStorage.getItem('theme')) {
-      setTheme(event.matches ? 'light' : 'dark', false);
-    }
-  } catch (error) {
-    /* ignore */
-  }
 });
 
 /* ---------- Header, scroll progress, back to top ---------- */
